@@ -6,6 +6,8 @@ import time
 from gurobipy import Model,GRB,LinExpr
 import pickle
 from copy import deepcopy
+import matplotlib.pyplot as plt
+import re
 
 cwd = os.getcwd()
 
@@ -36,7 +38,7 @@ max_np=5 #maximum number of passengers per vehicle
 
 #setting up variables ======================================
 #node numbers
-numbers=["12","23","31"]
+numbers=["1_2","2_3","3_1"]
 
 #number of passengers per line
 
@@ -123,12 +125,23 @@ endTime   = time.time()
 solution = []
 for v in model.getVars():
      solution.append([v.varName,v.x])
-     
-print(solution)
 
 
 
+#results visualisation
+#city coordinates
+coord=np.array([[-1,0],[1,0],[0,np.sqrt(25-1)]])
 
 
+plt.scatter(coord[:,0],coord[:,1])
 
+s=0
 
+for i in range(0,len(numbers)):
+    if solution[i+len(numbers)][1]>=0.9:
+        
+        s=[int(j) for j in re.findall(r'\d+', solution[i+len(numbers)][0])]
+        print(s)
+        plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]))
+
+plt.show()

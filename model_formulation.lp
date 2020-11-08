@@ -1,23 +1,23 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Maximize
-  2 pax_12 + 2 pax_23 + 5 pax_31 - 2 x_12 - 5 x_23 - 5 x_31 - 10 nt_12
-   - 10 nt_23 - 10 nt_31 - 2 nv_12 - 2 nv_23 - 2 nv_31
+  2 pax_1_2 + 2 pax_2_3 + 5 pax_3_1 - 2 x_1_2 - 5 x_2_3 - 5 x_3_1
+   - 100 nt_1_2 - 100 nt_2_3 - 100 nt_3_1 - 2 nv_1_2 - 2 nv_2_3 - 2 nv_3_1
 Subject To
- max_tubes_12: - 2 x_12 + nt_12 <= 0
- max_tubes_23: - 2 x_23 + nt_23 <= 0
- max_tubes_31: - 2 x_31 + nt_31 <= 0
- max_vehicles_12: - nt_12 + nv_12 <= 0
- max_vehicles_23: - nt_23 + nv_23 <= 0
- max_vehicles_31: - nt_31 + nv_31 <= 0
- max_passengers12: pax_12 - 5 nv_12 <= 0
- max_passengers23: pax_23 - 5 nv_23 <= 0
- max_passengers31: pax_31 - 5 nv_31 <= 0
+ max_tubes_1_2: - 2 x_1_2 + nt_1_2 <= 0
+ max_tubes_2_3: - 2 x_2_3 + nt_2_3 <= 0
+ max_tubes_3_1: - 2 x_3_1 + nt_3_1 <= 0
+ max_vehicles_1_2: - nt_1_2 + nv_1_2 <= 0
+ max_vehicles_2_3: - nt_2_3 + nv_2_3 <= 0
+ max_vehicles_3_1: - nt_3_1 + nv_3_1 <= 0
+ max_passengers1_2: pax_1_2 - 5 nv_1_2 <= 0
+ max_passengers2_3: pax_2_3 - 5 nv_2_3 <= 0
+ max_passengers3_1: pax_3_1 - 5 nv_3_1 <= 0
 Bounds
- pax_12 <= 5
- pax_23 <= 10
- pax_31 <= 15
+ pax_1_2 <= 5
+ pax_2_3 <= 10
+ pax_3_1 <= 15
 Binaries
- x_12 x_23 x_31
+ x_1_2 x_2_3 x_3_1
 Generals
- pax_12 pax_23 pax_31 nt_12 nt_23 nt_31 nv_12 nv_23 nv_31
+ pax_1_2 pax_2_3 pax_3_1 nt_1_2 nt_2_3 nt_3_1 nv_1_2 nv_2_3 nv_3_1
 End
