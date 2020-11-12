@@ -1,7 +1,7 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Maximize
   2 pax_1_2 + 2 pax_2_3 + 5 pax_3_1 - 2 x_1_2 - 5 x_2_3 - 5 x_3_1
-   - 100 nt_1_2 - 100 nt_2_3 - 100 nt_3_1 - 2 nv_1_2 - 2 nv_2_3 - 2 nv_3_1
+   - 10 nt_1_2 - 10 nt_2_3 - 10 nt_3_1 - 2 nv_1_2 - 2 nv_2_3 - 2 nv_3_1
 Subject To
  max_tubes_1_2: - 2 x_1_2 + nt_1_2 <= 0
  max_tubes_2_3: - 2 x_2_3 + nt_2_3 <= 0

@@ -30,7 +30,7 @@ max_tubes=np.array([2,2,2])
 #ticket price
 pr=np.array([2,2,5])
 
-pt=1 #price per tube
+pt=10 #price per tube
 pv=2 #price per vehicle
 max_nv=1 #maximum number of vehicles per tube
 max_np=5 #maximum number of passengers per vehicle
