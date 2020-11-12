@@ -30,7 +30,7 @@ max_tubes=np.array([2,2,2])
 #ticket price
 pr=np.array([2,2,5])
 
-pt=10 #price per tube
+pt=1 #price per tube
 pv=2 #price per vehicle
 max_nv=1 #maximum number of vehicles per tube
 max_np=5 #maximum number of passengers per vehicle
@@ -90,7 +90,7 @@ for i in range(0,len(numbers)):
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= pax[i]-nv[i]*max_np
-    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers%s"%(numbers[i]))
+    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
     
 model.update()
     
@@ -100,7 +100,7 @@ model.update()
 
 obj=LinExpr()
 
-# Adding each crash cost and associated decision variable to the
+
 # objective function
 for i in range(0,len(numbers)):
     obj+=pr[i]*pax[i]
@@ -141,7 +141,7 @@ for i in range(0,len(numbers)):
     if solution[i+len(numbers)][1]>=0.9:
         
         s=[int(j) for j in re.findall(r'\d+', solution[i+len(numbers)][0])]
-        print(s)
+        
         plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]))
 
 plt.show()
