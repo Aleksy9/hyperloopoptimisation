@@ -18,19 +18,22 @@ model = Model()
 
 #constant
 
+#city coordinates
+coord=np.array([[-1,-1],[-1,1],[1,1],[1,-1]])
+
 #maximum passengers per line
-p=np.array([5,10,15])
+p=np.array([5,10,15,12,13,9])
 
 #cost of land
-c=np.array([2,5,5])
+c=np.array([2,2,4,4,2,2])
 
 #maximum number of tubes
-max_tubes=np.array([2,2,2])
+max_tubes=np.array([2,2,2,3,3,1])
 
 #ticket price
-pr=np.array([2,2,5])
+pr=np.array([2,2,5,3,4,4])
 
-pt=1 #price per tube
+pt=25 #price per tube
 pv=2 #price per vehicle
 max_nv=1 #maximum number of vehicles per tube
 max_np=5 #maximum number of passengers per vehicle
@@ -38,7 +41,24 @@ max_np=5 #maximum number of passengers per vehicle
 
 #setting up variables ======================================
 #node numbers
-numbers=["1_2","2_3","3_1"]
+numbers=["1_2","2_3","3_1","2_4","1_4","3_4"]
+
+#create list of all indices that connect one node
+indices=np.array([])
+s=[]
+for i in range(len(numbers)):
+    
+    
+    for j in range(len(numbers)):
+        
+        s= [int(l) for l in re.findall(r'\d+', numbers[j])]
+    
+        for k in s:
+    
+            if k==i+1:
+                indices=np.append(indices,int(j))
+print(indices)
+    
 
 #number of passengers per line
 
@@ -92,6 +112,27 @@ for i in range(0,len(numbers)):
     thisLHS+= pax[i]-nv[i]*max_np
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
     
+print(int(0.5+np.sqrt(1 + 8*len(numbers))/2))  
+ 
+#Have all nodes connected at least once (requires 2 constraints to avoid subtours)
+#1 have each node have at least one link to it
+print(len(numbers))
+for i in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)):
+    thisLHS=LinExpr()
+    for j in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)-1):
+        
+        thisLHS+= -x[indices[i*(int(0.5+np.sqrt(1 + 8*len(numbers))/2)-1)+j]]
+    
+    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=-1,name="node_connected_%s"%(i+1))
+
+#2 have at least n-1 links active 
+thisLHS=LinExpr()
+for i in range(0,len(numbers)):
+    
+    thisLHS+= x[i]
+model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+
+
 model.update()
     
 
@@ -130,18 +171,19 @@ for v in model.getVars():
 
 #results visualisation
 #city coordinates
-coord=np.array([[-1,0],[1,0],[0,np.sqrt(25-1)]])
+
 
 
 plt.scatter(coord[:,0],coord[:,1])
 
 s=0
 
+#Function of loop: finds active links then plots line between nodes of each active link
 for i in range(0,len(numbers)):
     if solution[i+len(numbers)][1]>=0.9:
         
         s=[int(j) for j in re.findall(r'\d+', solution[i+len(numbers)][0])]
         
-        plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]))
-
+        plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]),label=numbers[i])
+plt.legend()
 plt.show()
