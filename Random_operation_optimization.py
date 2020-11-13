@@ -38,13 +38,14 @@ class Data_Generation():
                 
                 
         amount_passengers_node = np.random.randint(self.minimum, self.maximum, Sum(self.nodes))*20
-        Ticket_price_node =  np.random.randint(self.minimum, self.maximum, self.nodes)
-        land_cost_node =  np.random.randint(self.minimum+1, self.maximum, self.nodes)
-        amount_vehicles_tube =  np.random.randint(self.minimum+1, self.maximum, self.nodes)
-        price_vehicle = random.randint(self.minimum+1,self.maximum)
-        number_passengers_vehicle = random.randint(self.minimum+1,self.maximum)
+        Ticket_price_node =  np.random.randint(self.minimum, self.maximum, Sum(self.nodes))
+        land_cost_node =  np.random.randint(self.minimum+1, self.maximum, Sum(self.nodes))
+        amount_vehicles_tube =  np.random.randint(self.minimum+1, self.maximum, Sum(self.nodes))
+        price_vehicle = np.random.randint(self.minimum+1,self.maximum)
+        number_passengers_vehicle = np.random.randint(self.minimum+1,self.maximum)
+        max_tubes_rand = np.random.randint(self.minimum+1, self.maximum, Sum(self.nodes))
         
-        return amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle
+        return amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
        
     
 
@@ -52,9 +53,15 @@ class Data_Generation():
 Nodes_tryout = Data_Generation(10, 1,10)
 
 dist, connections, pointsX, pointsY = Nodes_tryout.create_nodes()
-amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle = Nodes_tryout.create_other_data()
+amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand= Nodes_tryout.create_other_data()
 
-print(amount_passengers_node)
+points=np.ones((len(pointsX),2))
+points[:,0]=pointsX[:,0]
+
+points[:,1]=pointsY[:,0]
+print(amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle)
+
+
 #f= open("LPsolve.Ip","w+")
 #
 #for i in range(nodes):
