@@ -22,7 +22,7 @@ class Data_Generation():
         connections = []
         
         for i, x in enumerate(pointsX):
-            dist.append(np.sqrt((x-pointsX[i+1::])**2 + (pointsY[i]-pointsX[i+1::])**2 ))
+            dist.append(np.sqrt((x-pointsX[i+1::])**2 + (pointsY[i]-pointsY[i+1::])**2 ))
             for j in range(len(pointsX[i+1::])):
                 connections.append(f"{i+1}_{i+j+2}")
         
