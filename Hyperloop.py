@@ -8,8 +8,8 @@ import pickle
 from copy import deepcopy
 import matplotlib.pyplot as plt
 import re
-from Random_operation_optimization import points,dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
-
+from Random_operation_optimization import dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
+from Mapping import points,combined_population,distance_links,links
 cwd = os.getcwd()
 
 # Keep track of start time to compute overall comptuational performance
@@ -23,10 +23,10 @@ model = Model()
 coord=points
 
 #maximum passengers per line
-p=amount_passengers_node
+p=combined_population
 
 #cost of land
-c=land_cost_node
+c=distance_links
 
 #maximum number of tubes
 max_tubes=max_tubes_rand
@@ -42,7 +42,7 @@ max_np=number_passengers_vehicle #maximum number of passengers per vehicle
 
 #setting up variables ======================================
 #node numbers
-numbers=connections
+numbers=links
 
 #create list of all indices that connect one node
 indices=np.array([])
