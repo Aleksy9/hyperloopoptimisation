@@ -58,7 +58,6 @@ for i in range(len(numbers)):
     
             if k==i+1:
                 indices=np.append(indices,int(j))
-print(indices)
     
 
 #number of passengers per line
@@ -98,7 +97,14 @@ for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= nt[i]-x[i]*max_tubes[i]
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_tubes_%s"%(numbers[i]))
-    
+
+#force the number of tubes to be >= 1 when link is active
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= nt[i]-x[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="min_tubes_%s"%(numbers[i]))
+
+
 #maximum number of vehicles per line
 
 for i in range(0,len(numbers)):
@@ -188,3 +194,16 @@ for i in range(0,len(numbers)):
         plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]),label=numbers[i])
 plt.legend()
 plt.show()
+
+
+#----GETTING DATA AND PLOTTING OF RESULTS--------#
+
+def get_data(solution):
+    data_result = list()
+    for data in solution:
+        if int(data[1]) != 0:
+            data_result.append(data)
+    return data_result
+
+data = get_data(solution)
+print(data)
