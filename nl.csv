@@ -1,0 +1,16 @@
+city,lat,lng,country,iso2,admin_name,capital,population,population_proper
+The Hague,52.08,4.27,Netherlands,NL,Zuid-Holland,primary,1406000,501725
+Amsterdam,52.35,4.9166,Netherlands,NL,Noord-Holland,primary,1031000,741636
+Rotterdam,51.92,4.48,Netherlands,NL,Zuid-Holland,minor,1005000,598199
+Utrecht,52.1003,5.12,Netherlands,NL,Utrecht,admin,640000,316448
+Eindhoven,51.43,5.5,Netherlands,NL,Noord-Brabant,minor,398053,209620
+Haarlem,52.3804,4.63,Netherlands,NL,Noord-Holland,admin,349957,147590
+Groningen,53.2204,6.58,Netherlands,NL,Groningen,admin,216688,181194
+Arnhem,51.988,5.923,Netherlands,NL,Gelderland,admin,141674,141674
+’s-Hertogenbosch,51.6833,5.3167,Netherlands,NL,Noord-Brabant,admin,134520,134520
+Leeuwarden,53.2504,5.7834,Netherlands,NL,Fryslân,admin,125778,91424
+Maastricht,50.853,5.677,Netherlands,NL,Limburg,admin,122378,122378
+Zwolle,52.524,6.097,Netherlands,NL,Overijssel,admin,111805,111805
+Assen,53,6.55,Netherlands,NL,Drenthe,admin,62237,62237
+Middelburg,51.502,3.61,Netherlands,NL,Zeeland,admin,46485,46485
+
