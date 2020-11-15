@@ -130,7 +130,7 @@ thisLHS=LinExpr()
 for i in range(0,len(numbers)):
     
     thisLHS+= x[i]
-model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
 
 
 model.update()

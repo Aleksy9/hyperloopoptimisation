@@ -22,7 +22,7 @@ class Data_Generation():
         connections = []
         
         for i, x in enumerate(pointsX):
-            dist.append(np.sqrt((x-pointsX[i+1::])**2 + (pointsY[i]-pointsX[i+1::])**2 ))
+            dist.append(np.sqrt((x-pointsX[i+1::])**2 + (pointsY[i]-pointsY[i+1::])**2 ))
             for j in range(len(pointsX[i+1::])):
                 connections.append(f"{i+1}_{i+j+2}")
         
@@ -38,7 +38,7 @@ class Data_Generation():
                 
                 
         amount_passengers_node = np.random.randint(self.minimum, self.maximum, Sum(self.nodes))*20
-        Ticket_price_node =  np.random.randint(self.minimum, self.maximum, Sum(self.nodes))
+        Ticket_price_node =  np.random.randint(self.minimum, self.maximum, Sum(self.nodes))*5
         land_cost_node =  np.random.randint(self.minimum+1, self.maximum, Sum(self.nodes))
         amount_vehicles_tube =  np.random.randint(self.minimum+1, self.maximum, Sum(self.nodes))
         price_vehicle = np.random.randint(self.minimum+1,self.maximum)
