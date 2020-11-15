@@ -10,6 +10,11 @@ import matplotlib.pyplot as plt
 import re
 from Random_operation_optimization import dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
 from Mapping import points,combined_population,distance_links,links
+import importlib
+import Random_operation_optimization
+
+importlib.reload(Random_operation_optimization)
+
 cwd = os.getcwd()
 
 # Keep track of start time to compute overall comptuational performance

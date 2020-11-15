@@ -22,10 +22,10 @@ model = Model()
 coord=np.array([[-1,-1],[-1,1],[1,1]])
 
 #maximum passengers per line
-p=np.array([5,15,10])
+p=np.array([5,15,10]) #link 1-2,1-3,2-3
 
 #cost of land
-c=np.array([2,5,5])
+c=np.array([7,45,100])
 
 #maximum number of tubes
 max_tubes=np.array([2,2,2])
@@ -95,6 +95,12 @@ for i in range(0, len(numbers)):
     thisLHS += nt[i] - x[i] * max_tubes[i]
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0, name="max_tubes_%s" % (numbers[i]))
 
+# force the number of tubes to be >= 1 when link is active
+for i in range(0, len(numbers)):
+    thisLHS = LinExpr()
+    thisLHS += nt[i] - x[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0, name="min_tubes_%s" % (numbers[i]))
+
 # maximum number of vehicles per line
 
 for i in range(0, len(numbers)):
@@ -129,7 +135,7 @@ model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5 + np.sqrt(1 + 8 * len(num
                 name="min_amount_links")
 
 model.update()
-    
+
 
 
 #Defining objective function
@@ -157,17 +163,19 @@ model.optimize()
 # Keep track of end time to compute overall comptuational performance 
 endTime = time.time()
 
+#objective value result
+obj = model.ObjVal
+
 # Saving our solution in the form [name of variable, value of variable]
-solution2 = []
+solution2 = [["Objective value", obj]]
 for v in model.getVars():
      solution2.append([v.varName,v.x])
 
 
 
+
 #results visualisation
 #city coordinates
-
-
 
 plt.scatter(coord[:,0],coord[:,1])
 
@@ -175,7 +183,7 @@ s=0
 
 #Function of loop: finds active links then plots line between nodes of each active link
 for i in range(0,len(numbers)):
-    if solution2[i+len(numbers)][1]>=0.9:
+    if solution2[i+len(numbers)+1][1]>=0.9:
         
         s=[int(j) for j in re.findall(r'\d+', solution2[i+len(numbers)][0])]
         
@@ -187,6 +195,7 @@ plt.show()
 
 def get_data(solution):
     data_result = list()
+    data_result.append(solution[0])
     for data in solution:
         if int(data[1]) != 0:
             data_result.append(data)
