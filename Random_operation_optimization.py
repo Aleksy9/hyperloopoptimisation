@@ -50,7 +50,7 @@ class Data_Generation():
     
 
 
-Nodes_tryout = Data_Generation(10, 1,10)
+Nodes_tryout = Data_Generation(8, 1,10)
 
 dist, connections, pointsX, pointsY = Nodes_tryout.create_nodes()
 amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand= Nodes_tryout.create_other_data()
@@ -59,7 +59,6 @@ points=np.ones((len(pointsX),2))
 points[:,0]=pointsX[:,0]
 
 points[:,1]=pointsY[:,0]
-print(amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle)
 
 
 #f= open("LPsolve.Ip","w+")

@@ -34,10 +34,10 @@ max_tubes=max_tubes_rand
 #ticket price
 pr=Ticket_price_node
 
-pt=150 #price per tube
+pt=50 #price per tube
 pv=price_vehicle #price per vehicle
 max_nv=2 #maximum number of vehicles per tube
-max_np=number_passengers_vehicle #maximum number of passengers per vehicle
+max_np=50 #maximum number of passengers per vehicle
 
 
 #setting up variables ======================================
@@ -58,7 +58,7 @@ for i in range(len(numbers)):
     
             if k==i+1:
                 indices=np.append(indices,int(j))
-print(indices)
+
     
 
 #number of passengers per line
@@ -113,11 +113,11 @@ for i in range(0,len(numbers)):
     thisLHS+= pax[i]-nv[i]*max_np
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
     
-print(int(0.5+np.sqrt(1 + 8*len(numbers))/2))  
+
  
 #Have all nodes connected at least once (requires 2 constraints to avoid subtours)
 #1 have each node have at least one link to it
-print(len(numbers))
+
 for i in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)):
     thisLHS=LinExpr()
     for j in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)-1):
@@ -131,7 +131,7 @@ thisLHS=LinExpr()
 for i in range(0,len(numbers)):
     
     thisLHS+= x[i]
-model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
 
 
 model.update()
