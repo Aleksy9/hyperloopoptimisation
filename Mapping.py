@@ -7,8 +7,7 @@ Created on Sun Nov 15 13:42:19 2020
 
 import numpy as np
 import matplotlib.pyplot as plt
-import cartopy.crs as ccrs
-import cartopy.feature as cfeature
+
 import pandas as pd
 import matplotlib.image as mpimg
 from math import cos, asin, sqrt, pi
@@ -30,7 +29,7 @@ population = cities['population'].values
 label=cities['city'].values
 
 
-img = mpimg.imread('map_nl_cropped.jpg')
+
 
 
 points=np.ones((len(lat),2))

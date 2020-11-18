@@ -8,7 +8,9 @@ import pickle
 from copy import deepcopy
 import matplotlib.pyplot as plt
 import re
-from Random_operation_optimization import points,dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
+from Random_operation_optimization import dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
+from Mapping import points,combined_population,distance_links,links
+
 
 cwd = os.getcwd()
 
@@ -23,7 +25,7 @@ model = Model()
 coord=points
 
 #maximum passengers per line
-p=amount_passengers_node
+p=combined_population
 
 #cost of land
 c=land_cost_node
@@ -32,17 +34,18 @@ c=land_cost_node
 max_tubes=max_tubes_rand
 
 #ticket price
-pr=Ticket_price_node
 
-pt=50 #price per tube
-pv=price_vehicle #price per vehicle
+pr=distance_links*0.5
+
+pt=distance_links*25610000 #price of construction of tube based on price per kilometre (distance between links times the cost per kilometre assuming we dont tunnel)
+pv=4500000 #price per vehicle
 max_nv=2 #maximum number of vehicles per tube
 max_np=50 #maximum number of passengers per vehicle
 
 
 #setting up variables ======================================
 #node numbers
-numbers=connections
+numbers=links
 
 #create list of all indices that connect one node
 indices=np.array([])
@@ -147,7 +150,7 @@ obj=LinExpr()
 for i in range(0,len(numbers)):
     obj+=pr[i]*pax[i]
     obj-=c[i]*x[i]
-    obj-=pt*nt[i]
+    obj-=pt[i]*nt[i]
     obj-=pv*nv[i]
 
 # Important: here we are telling the solver we want to minimize the objective
