@@ -29,7 +29,8 @@ population = cities['population'].values
 label=cities['city'].values
 
 
-
+for i in range(len(label)):
+    label[i]+="_%s"%(i+1)
 
 
 points=np.ones((len(lat),2))

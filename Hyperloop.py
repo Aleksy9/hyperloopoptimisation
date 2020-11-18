@@ -24,14 +24,14 @@ model = Model()
 #city coordinates
 coord=points
 
-#maximum passengers per line
-p=combined_population
+#maximum passengers per line per year
+p=[int(combined_population[i]*0.47) for i in range(len(links))]
 
 #cost of land
 c=land_cost_node
 
 #maximum number of tubes
-max_tubes=max_tubes_rand
+max_tubes=2
 
 #ticket price
 
@@ -39,8 +39,8 @@ pr=distance_links*0.5
 
 pt=distance_links*25610000 #price of construction of tube based on price per kilometre (distance between links times the cost per kilometre assuming we dont tunnel)
 pv=4500000 #price per vehicle
-max_nv=2 #maximum number of vehicles per tube
-max_np=50 #maximum number of passengers per vehicle
+max_nv=20 #maximum number of vehicles per tube (source: hyperloop commercial feasibility analysis)
+max_np=438000 #amount of passengers a vehicle can transport per year assuming 1 trip per hour
 
 
 #setting up variables ======================================
@@ -94,13 +94,15 @@ model.update()
 
 
 
-#setting up constraints
+#setting up constraints =========================================
 thisLHS=LinExpr()
 #maximum amount of tubes per line constraint
+
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
-    thisLHS+= nt[i]-x[i]*max_tubes[i]
+    thisLHS+= nt[i]-x[i]*max_tubes
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_tubes_%s"%(numbers[i]))
+
     
 #maximum number of vehicles per line
 
@@ -116,7 +118,11 @@ for i in range(0,len(numbers)):
     thisLHS+= pax[i]-nv[i]*max_np
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
     
-
+#equal amount of passengers to demand between cities
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= pax[i]-p[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
  
 #Have all nodes connected at least once (requires 2 constraints to avoid subtours)
 #1 have each node have at least one link to it
@@ -134,9 +140,21 @@ thisLHS=LinExpr()
 for i in range(0,len(numbers)):
     
     thisLHS+= x[i]
-model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
 
+#if a link is active, have at least 1 tube constructed
 
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= nt[i]-x[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_tube_%s"%numbers[i])
+
+#if a tube is built, we require at least one vehicle to run in it
+
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= nv[i]-nt[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_vehicle_%s"%numbers[i])
 model.update()
     
 
