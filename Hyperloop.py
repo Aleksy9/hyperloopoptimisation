@@ -116,7 +116,7 @@ for i in range(0,len(numbers)):
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= pax[i]-nv[i]*max_np
-    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
+    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_vehicle%s"%(numbers[i]))
     
 #equal amount of passengers to demand between cities
 for i in range(0,len(numbers)):
@@ -140,7 +140,7 @@ thisLHS=LinExpr()
 for i in range(0,len(numbers)):
     
     thisLHS+= x[i]
-model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
 
 #if a link is active, have at least 1 tube constructed
 
