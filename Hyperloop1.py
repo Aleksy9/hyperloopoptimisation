@@ -63,8 +63,18 @@ for i in range(len(numbers)):
             if k==i+1:
                 indices=np.append(indices,int(j))
 
-    
-
+#creating numbers flipped array
+def flip_numbers(array):
+    numbers_flipped=[]
+    s=[]
+    v=[0,0]
+    l=''
+    for i in range(len(array)):
+        s= [int(l) for l in re.findall(r'\d+', array[i])]
+        
+        l="%s"%s[1]+"_%s"%s[0]
+        numbers_flipped.append(l)
+    return numbers_flipped
 #number of passengers per line
 
 pax={}
@@ -77,6 +87,11 @@ for i in range(0,len(numbers)):
 x={}
 for i in range(0,len(numbers)):
     x[i]=model.addVar(lb=0,vtype=GRB.BINARY,name="x_%s"%(numbers[i]))
+    
+y={}
+for i in range(0,len(numbers)):
+    y[2*i]=model.addVar(lb=0,vtype=GRB.BINARY,name="y_%s"%(numbers[i]))
+    y[2*i+1]=model.addVar(lb=0,vtype=GRB.BINARY,name="y_%s"%(flip_numbers(numbers)[i]))
     
 #number of tubes between two points
 
@@ -125,23 +140,53 @@ for i in range(0,len(numbers)):
     thisLHS+= pax[i]-p[i]
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
  
-#Have all nodes connected at least once (requires 2 constraints to avoid subtours)
-#1 have each node have at least one link to it
 
-for i in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)):
-    thisLHS=LinExpr()
-    for j in range(0,int(0.5+np.sqrt(1 + 8*len(numbers))/2)-1):
-        
-        thisLHS+= -x[indices[i*(int(0.5+np.sqrt(1 + 8*len(numbers))/2)-1)+j]]
-    
-    model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=-1,name="node_connected_%s"%(i+1))
 
-#2 have at least n-1 links active 
+#2 have n-1 links active 
 thisLHS=LinExpr()
 for i in range(0,len(numbers)):
     
     thisLHS+= x[i]
-model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
+
+#new subtour elimination method
+#constraint 1
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+=x[i]-y[2*i]-y[2*i+1]
+    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=0,name="martin_method_first_constraint_%s"%(i+1))
+    
+
+#constraint 2
+#preprocessing
+y_numbers=[]
+for i in range(len(numbers)):
+    y_numbers.append(numbers[i])
+    y_numbers.append(flip_numbers(numbers)[i])
+
+
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+=x[i]
+    sx=[int(l) for l in re.findall(r'\d+', numbers[i])]
+    for j in range(0,len(y_numbers)):
+        sy= [int(l) for l in re.findall(r'\d+', y_numbers[j])]
+        
+        if sx[1]==sy[1] and sx[0]!=sy[0]:
+            thisLHS+=y[j]
+    
+    model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1,name="martin_method_second_constraint_%s"%(i+1))
+        
+
+
+
+
+
+
+
+
+
+
 
 #if a link is active, have at least 1 tube constructed
 

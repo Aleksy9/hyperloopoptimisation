@@ -509,39 +509,6 @@ Subject To
  max_passengers_12_13: pax_12_13 <= 163599
  max_passengers_12_14: pax_12_14 <= 148792
  max_passengers_13_14: pax_13_14 <= 102198
- node_connected_1: - x_1_2 - x_1_3 - x_1_4 - x_1_5 - x_1_6 - x_1_7 - x_1_8
-   - x_1_9 - x_1_10 - x_1_11 - x_1_12 - x_1_13 - x_1_14 <= -1
- node_connected_2: - x_1_2 - x_2_3 - x_2_4 - x_2_5 - x_2_6 - x_2_7 - x_2_8
-   - x_2_9 - x_2_10 - x_2_11 - x_2_12 - x_2_13 - x_2_14 <= -1
- node_connected_3: - x_1_3 - x_2_3 - x_3_4 - x_3_5 - x_3_6 - x_3_7 - x_3_8
-   - x_3_9 - x_3_10 - x_3_11 - x_3_12 - x_3_13 - x_3_14 <= -1
- node_connected_4: - x_1_4 - x_2_4 - x_3_4 - x_4_5 - x_4_6 - x_4_7 - x_4_8
-   - x_4_9 - x_4_10 - x_4_11 - x_4_12 - x_4_13 - x_4_14 <= -1
- node_connected_5: - x_1_5 - x_2_5 - x_3_5 - x_4_5 - x_5_6 - x_5_7 - x_5_8
-   - x_5_9 - x_5_10 - x_5_11 - x_5_12 - x_5_13 - x_5_14 <= -1
- node_connected_6: - x_1_6 - x_2_6 - x_3_6 - x_4_6 - x_5_6 - x_6_7 - x_6_8
-   - x_6_9 - x_6_10 - x_6_11 - x_6_12 - x_6_13 - x_6_14 <= -1
- node_connected_7: - x_1_7 - x_2_7 - x_3_7 - x_4_7 - x_5_7 - x_6_7 - x_7_8
-   - x_7_9 - x_7_10 - x_7_11 - x_7_12 - x_7_13 - x_7_14 <= -1
- node_connected_8: - x_1_8 - x_2_8 - x_3_8 - x_4_8 - x_5_8 - x_6_8 - x_7_8
-   - x_8_9 - x_8_10 - x_8_11 - x_8_12 - x_8_13 - x_8_14 <= -1
- node_connected_9: - x_1_9 - x_2_9 - x_3_9 - x_4_9 - x_5_9 - x_6_9 - x_7_9
-   - x_8_9 - x_9_10 - x_9_11 - x_9_12 - x_9_13 - x_9_14 <= -1
- node_connected_10: - x_1_10 - x_2_10 - x_3_10 - x_4_10 - x_5_10 - x_6_10
-   - x_7_10 - x_8_10 - x_9_10 - x_10_11 - x_10_12 - x_10_13 - x_10_14
-   <= -1
- node_connected_11: - x_1_11 - x_2_11 - x_3_11 - x_4_11 - x_5_11 - x_6_11
-   - x_7_11 - x_8_11 - x_9_11 - x_10_11 - x_11_12 - x_11_13 - x_11_14
-   <= -1
- node_connected_12: - x_1_12 - x_2_12 - x_3_12 - x_4_12 - x_5_12 - x_6_12
-   - x_7_12 - x_8_12 - x_9_12 - x_10_12 - x_11_12 - x_12_13 - x_12_14
-   <= -1
- node_connected_13: - x_1_13 - x_2_13 - x_3_13 - x_4_13 - x_5_13 - x_6_13
-   - x_7_13 - x_8_13 - x_9_13 - x_10_13 - x_11_13 - x_12_13 - x_13_14
-   <= -1
- node_connected_14: - x_1_14 - x_2_14 - x_3_14 - x_4_14 - x_5_14 - x_6_14
-   - x_7_14 - x_8_14 - x_9_14 - x_10_14 - x_11_14 - x_12_14 - x_13_14
-   <= -1
  min_amount_links: x_1_2 + x_1_3 + x_1_4 + x_1_5 + x_1_6 + x_1_7 + x_1_8
    + x_1_9 + x_1_10 + x_1_11 + x_1_12 + x_1_13 + x_1_14 + x_2_3 + x_2_4
    + x_2_5 + x_2_6 + x_2_7 + x_2_8 + x_2_9 + x_2_10 + x_2_11 + x_2_12
@@ -553,7 +520,371 @@ Subject To
    + x_7_8 + x_7_9 + x_7_10 + x_7_11 + x_7_12 + x_7_13 + x_7_14 + x_8_9
    + x_8_10 + x_8_11 + x_8_12 + x_8_13 + x_8_14 + x_9_10 + x_9_11 + x_9_12
    + x_9_13 + x_9_14 + x_10_11 + x_10_12 + x_10_13 + x_10_14 + x_11_12
-   + x_11_13 + x_11_14 + x_12_13 + x_12_14 + x_13_14 >= 13
+   + x_11_13 + x_11_14 + x_12_13 + x_12_14 + x_13_14 = 13
+ martin_method_first_constraint_1: x_1_2 - y_1_2 - y_2_1 = 0
+ martin_method_first_constraint_2: x_1_3 - y_1_3 - y_3_1 = 0
+ martin_method_first_constraint_3: x_1_4 - y_1_4 - y_4_1 = 0
+ martin_method_first_constraint_4: x_1_5 - y_1_5 - y_5_1 = 0
+ martin_method_first_constraint_5: x_1_6 - y_1_6 - y_6_1 = 0
+ martin_method_first_constraint_6: x_1_7 - y_1_7 - y_7_1 = 0
+ martin_method_first_constraint_7: x_1_8 - y_1_8 - y_8_1 = 0
+ martin_method_first_constraint_8: x_1_9 - y_1_9 - y_9_1 = 0
+ martin_method_first_constraint_9: x_1_10 - y_1_10 - y_10_1 = 0
+ martin_method_first_constraint_10: x_1_11 - y_1_11 - y_11_1 = 0
+ martin_method_first_constraint_11: x_1_12 - y_1_12 - y_12_1 = 0
+ martin_method_first_constraint_12: x_1_13 - y_1_13 - y_13_1 = 0
+ martin_method_first_constraint_13: x_1_14 - y_1_14 - y_14_1 = 0
+ martin_method_first_constraint_14: x_2_3 - y_2_3 - y_3_2 = 0
+ martin_method_first_constraint_15: x_2_4 - y_2_4 - y_4_2 = 0
+ martin_method_first_constraint_16: x_2_5 - y_2_5 - y_5_2 = 0
+ martin_method_first_constraint_17: x_2_6 - y_2_6 - y_6_2 = 0
+ martin_method_first_constraint_18: x_2_7 - y_2_7 - y_7_2 = 0
+ martin_method_first_constraint_19: x_2_8 - y_2_8 - y_8_2 = 0
+ martin_method_first_constraint_20: x_2_9 - y_2_9 - y_9_2 = 0
+ martin_method_first_constraint_21: x_2_10 - y_2_10 - y_10_2 = 0
+ martin_method_first_constraint_22: x_2_11 - y_2_11 - y_11_2 = 0
+ martin_method_first_constraint_23: x_2_12 - y_2_12 - y_12_2 = 0
+ martin_method_first_constraint_24: x_2_13 - y_2_13 - y_13_2 = 0
+ martin_method_first_constraint_25: x_2_14 - y_2_14 - y_14_2 = 0
+ martin_method_first_constraint_26: x_3_4 - y_3_4 - y_4_3 = 0
+ martin_method_first_constraint_27: x_3_5 - y_3_5 - y_5_3 = 0
+ martin_method_first_constraint_28: x_3_6 - y_3_6 - y_6_3 = 0
+ martin_method_first_constraint_29: x_3_7 - y_3_7 - y_7_3 = 0
+ martin_method_first_constraint_30: x_3_8 - y_3_8 - y_8_3 = 0
+ martin_method_first_constraint_31: x_3_9 - y_3_9 - y_9_3 = 0
+ martin_method_first_constraint_32: x_3_10 - y_3_10 - y_10_3 = 0
+ martin_method_first_constraint_33: x_3_11 - y_3_11 - y_11_3 = 0
+ martin_method_first_constraint_34: x_3_12 - y_3_12 - y_12_3 = 0
+ martin_method_first_constraint_35: x_3_13 - y_3_13 - y_13_3 = 0
+ martin_method_first_constraint_36: x_3_14 - y_3_14 - y_14_3 = 0
+ martin_method_first_constraint_37: x_4_5 - y_4_5 - y_5_4 = 0
+ martin_method_first_constraint_38: x_4_6 - y_4_6 - y_6_4 = 0
+ martin_method_first_constraint_39: x_4_7 - y_4_7 - y_7_4 = 0
+ martin_method_first_constraint_40: x_4_8 - y_4_8 - y_8_4 = 0
+ martin_method_first_constraint_41: x_4_9 - y_4_9 - y_9_4 = 0
+ martin_method_first_constraint_42: x_4_10 - y_4_10 - y_10_4 = 0
+ martin_method_first_constraint_43: x_4_11 - y_4_11 - y_11_4 = 0
+ martin_method_first_constraint_44: x_4_12 - y_4_12 - y_12_4 = 0
+ martin_method_first_constraint_45: x_4_13 - y_4_13 - y_13_4 = 0
+ martin_method_first_constraint_46: x_4_14 - y_4_14 - y_14_4 = 0
+ martin_method_first_constraint_47: x_5_6 - y_5_6 - y_6_5 = 0
+ martin_method_first_constraint_48: x_5_7 - y_5_7 - y_7_5 = 0
+ martin_method_first_constraint_49: x_5_8 - y_5_8 - y_8_5 = 0
+ martin_method_first_constraint_50: x_5_9 - y_5_9 - y_9_5 = 0
+ martin_method_first_constraint_51: x_5_10 - y_5_10 - y_10_5 = 0
+ martin_method_first_constraint_52: x_5_11 - y_5_11 - y_11_5 = 0
+ martin_method_first_constraint_53: x_5_12 - y_5_12 - y_12_5 = 0
+ martin_method_first_constraint_54: x_5_13 - y_5_13 - y_13_5 = 0
+ martin_method_first_constraint_55: x_5_14 - y_5_14 - y_14_5 = 0
+ martin_method_first_constraint_56: x_6_7 - y_6_7 - y_7_6 = 0
+ martin_method_first_constraint_57: x_6_8 - y_6_8 - y_8_6 = 0
+ martin_method_first_constraint_58: x_6_9 - y_6_9 - y_9_6 = 0
+ martin_method_first_constraint_59: x_6_10 - y_6_10 - y_10_6 = 0
+ martin_method_first_constraint_60: x_6_11 - y_6_11 - y_11_6 = 0
+ martin_method_first_constraint_61: x_6_12 - y_6_12 - y_12_6 = 0
+ martin_method_first_constraint_62: x_6_13 - y_6_13 - y_13_6 = 0
+ martin_method_first_constraint_63: x_6_14 - y_6_14 - y_14_6 = 0
+ martin_method_first_constraint_64: x_7_8 - y_7_8 - y_8_7 = 0
+ martin_method_first_constraint_65: x_7_9 - y_7_9 - y_9_7 = 0
+ martin_method_first_constraint_66: x_7_10 - y_7_10 - y_10_7 = 0
+ martin_method_first_constraint_67: x_7_11 - y_7_11 - y_11_7 = 0
+ martin_method_first_constraint_68: x_7_12 - y_7_12 - y_12_7 = 0
+ martin_method_first_constraint_69: x_7_13 - y_7_13 - y_13_7 = 0
+ martin_method_first_constraint_70: x_7_14 - y_7_14 - y_14_7 = 0
+ martin_method_first_constraint_71: x_8_9 - y_8_9 - y_9_8 = 0
+ martin_method_first_constraint_72: x_8_10 - y_8_10 - y_10_8 = 0
+ martin_method_first_constraint_73: x_8_11 - y_8_11 - y_11_8 = 0
+ martin_method_first_constraint_74: x_8_12 - y_8_12 - y_12_8 = 0
+ martin_method_first_constraint_75: x_8_13 - y_8_13 - y_13_8 = 0
+ martin_method_first_constraint_76: x_8_14 - y_8_14 - y_14_8 = 0
+ martin_method_first_constraint_77: x_9_10 - y_9_10 - y_10_9 = 0
+ martin_method_first_constraint_78: x_9_11 - y_9_11 - y_11_9 = 0
+ martin_method_first_constraint_79: x_9_12 - y_9_12 - y_12_9 = 0
+ martin_method_first_constraint_80: x_9_13 - y_9_13 - y_13_9 = 0
+ martin_method_first_constraint_81: x_9_14 - y_9_14 - y_14_9 = 0
+ martin_method_first_constraint_82: x_10_11 - y_10_11 - y_11_10 = 0
+ martin_method_first_constraint_83: x_10_12 - y_10_12 - y_12_10 = 0
+ martin_method_first_constraint_84: x_10_13 - y_10_13 - y_13_10 = 0
+ martin_method_first_constraint_85: x_10_14 - y_10_14 - y_14_10 = 0
+ martin_method_first_constraint_86: x_11_12 - y_11_12 - y_12_11 = 0
+ martin_method_first_constraint_87: x_11_13 - y_11_13 - y_13_11 = 0
+ martin_method_first_constraint_88: x_11_14 - y_11_14 - y_14_11 = 0
+ martin_method_first_constraint_89: x_12_13 - y_12_13 - y_13_12 = 0
+ martin_method_first_constraint_90: x_12_14 - y_12_14 - y_14_12 = 0
+ martin_method_first_constraint_91: x_13_14 - y_13_14 - y_14_13 = 0
+ martin_method_second_constraint_1: x_1_2 + y_3_2 + y_4_2 + y_5_2 + y_6_2
+   + y_7_2 + y_8_2 + y_9_2 + y_10_2 + y_11_2 + y_12_2 + y_13_2 + y_14_2
+   = 1
+ martin_method_second_constraint_2: x_1_3 + y_2_3 + y_4_3 + y_5_3 + y_6_3
+   + y_7_3 + y_8_3 + y_9_3 + y_10_3 + y_11_3 + y_12_3 + y_13_3 + y_14_3
+   = 1
+ martin_method_second_constraint_3: x_1_4 + y_2_4 + y_3_4 + y_5_4 + y_6_4
+   + y_7_4 + y_8_4 + y_9_4 + y_10_4 + y_11_4 + y_12_4 + y_13_4 + y_14_4
+   = 1
+ martin_method_second_constraint_4: x_1_5 + y_2_5 + y_3_5 + y_4_5 + y_6_5
+   + y_7_5 + y_8_5 + y_9_5 + y_10_5 + y_11_5 + y_12_5 + y_13_5 + y_14_5
+   = 1
+ martin_method_second_constraint_5: x_1_6 + y_2_6 + y_3_6 + y_4_6 + y_5_6
+   + y_7_6 + y_8_6 + y_9_6 + y_10_6 + y_11_6 + y_12_6 + y_13_6 + y_14_6
+   = 1
+ martin_method_second_constraint_6: x_1_7 + y_2_7 + y_3_7 + y_4_7 + y_5_7
+   + y_6_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_7: x_1_8 + y_2_8 + y_3_8 + y_4_8 + y_5_8
+   + y_6_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_8: x_1_9 + y_2_9 + y_3_9 + y_4_9 + y_5_9
+   + y_6_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_9: x_1_10 + y_2_10 + y_3_10 + y_4_10
+   + y_5_10 + y_6_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_10: x_1_11 + y_2_11 + y_3_11 + y_4_11
+   + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_11: x_1_12 + y_2_12 + y_3_12 + y_4_12
+   + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_12: x_1_13 + y_2_13 + y_3_13 + y_4_13
+   + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_13: x_1_14 + y_2_14 + y_3_14 + y_4_14
+   + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_14: x_2_3 + y_1_3 + y_4_3 + y_5_3 + y_6_3
+   + y_7_3 + y_8_3 + y_9_3 + y_10_3 + y_11_3 + y_12_3 + y_13_3 + y_14_3
+   = 1
+ martin_method_second_constraint_15: x_2_4 + y_1_4 + y_3_4 + y_5_4 + y_6_4
+   + y_7_4 + y_8_4 + y_9_4 + y_10_4 + y_11_4 + y_12_4 + y_13_4 + y_14_4
+   = 1
+ martin_method_second_constraint_16: x_2_5 + y_1_5 + y_3_5 + y_4_5 + y_6_5
+   + y_7_5 + y_8_5 + y_9_5 + y_10_5 + y_11_5 + y_12_5 + y_13_5 + y_14_5
+   = 1
+ martin_method_second_constraint_17: x_2_6 + y_1_6 + y_3_6 + y_4_6 + y_5_6
+   + y_7_6 + y_8_6 + y_9_6 + y_10_6 + y_11_6 + y_12_6 + y_13_6 + y_14_6
+   = 1
+ martin_method_second_constraint_18: x_2_7 + y_1_7 + y_3_7 + y_4_7 + y_5_7
+   + y_6_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_19: x_2_8 + y_1_8 + y_3_8 + y_4_8 + y_5_8
+   + y_6_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_20: x_2_9 + y_1_9 + y_3_9 + y_4_9 + y_5_9
+   + y_6_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_21: x_2_10 + y_1_10 + y_3_10 + y_4_10
+   + y_5_10 + y_6_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_22: x_2_11 + y_1_11 + y_3_11 + y_4_11
+   + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_23: x_2_12 + y_1_12 + y_3_12 + y_4_12
+   + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_24: x_2_13 + y_1_13 + y_3_13 + y_4_13
+   + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_25: x_2_14 + y_1_14 + y_3_14 + y_4_14
+   + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_26: x_3_4 + y_1_4 + y_2_4 + y_5_4 + y_6_4
+   + y_7_4 + y_8_4 + y_9_4 + y_10_4 + y_11_4 + y_12_4 + y_13_4 + y_14_4
+   = 1
+ martin_method_second_constraint_27: x_3_5 + y_1_5 + y_2_5 + y_4_5 + y_6_5
+   + y_7_5 + y_8_5 + y_9_5 + y_10_5 + y_11_5 + y_12_5 + y_13_5 + y_14_5
+   = 1
+ martin_method_second_constraint_28: x_3_6 + y_1_6 + y_2_6 + y_4_6 + y_5_6
+   + y_7_6 + y_8_6 + y_9_6 + y_10_6 + y_11_6 + y_12_6 + y_13_6 + y_14_6
+   = 1
+ martin_method_second_constraint_29: x_3_7 + y_1_7 + y_2_7 + y_4_7 + y_5_7
+   + y_6_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_30: x_3_8 + y_1_8 + y_2_8 + y_4_8 + y_5_8
+   + y_6_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_31: x_3_9 + y_1_9 + y_2_9 + y_4_9 + y_5_9
+   + y_6_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_32: x_3_10 + y_1_10 + y_2_10 + y_4_10
+   + y_5_10 + y_6_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_33: x_3_11 + y_1_11 + y_2_11 + y_4_11
+   + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_34: x_3_12 + y_1_12 + y_2_12 + y_4_12
+   + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_35: x_3_13 + y_1_13 + y_2_13 + y_4_13
+   + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_36: x_3_14 + y_1_14 + y_2_14 + y_4_14
+   + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_37: x_4_5 + y_1_5 + y_2_5 + y_3_5 + y_6_5
+   + y_7_5 + y_8_5 + y_9_5 + y_10_5 + y_11_5 + y_12_5 + y_13_5 + y_14_5
+   = 1
+ martin_method_second_constraint_38: x_4_6 + y_1_6 + y_2_6 + y_3_6 + y_5_6
+   + y_7_6 + y_8_6 + y_9_6 + y_10_6 + y_11_6 + y_12_6 + y_13_6 + y_14_6
+   = 1
+ martin_method_second_constraint_39: x_4_7 + y_1_7 + y_2_7 + y_3_7 + y_5_7
+   + y_6_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_40: x_4_8 + y_1_8 + y_2_8 + y_3_8 + y_5_8
+   + y_6_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_41: x_4_9 + y_1_9 + y_2_9 + y_3_9 + y_5_9
+   + y_6_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_42: x_4_10 + y_1_10 + y_2_10 + y_3_10
+   + y_5_10 + y_6_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_43: x_4_11 + y_1_11 + y_2_11 + y_3_11
+   + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_44: x_4_12 + y_1_12 + y_2_12 + y_3_12
+   + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_45: x_4_13 + y_1_13 + y_2_13 + y_3_13
+   + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_46: x_4_14 + y_1_14 + y_2_14 + y_3_14
+   + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_47: x_5_6 + y_1_6 + y_2_6 + y_3_6 + y_4_6
+   + y_7_6 + y_8_6 + y_9_6 + y_10_6 + y_11_6 + y_12_6 + y_13_6 + y_14_6
+   = 1
+ martin_method_second_constraint_48: x_5_7 + y_1_7 + y_2_7 + y_3_7 + y_4_7
+   + y_6_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_49: x_5_8 + y_1_8 + y_2_8 + y_3_8 + y_4_8
+   + y_6_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_50: x_5_9 + y_1_9 + y_2_9 + y_3_9 + y_4_9
+   + y_6_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_51: x_5_10 + y_1_10 + y_2_10 + y_3_10
+   + y_4_10 + y_6_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_52: x_5_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_53: x_5_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_54: x_5_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_55: x_5_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_56: x_6_7 + y_1_7 + y_2_7 + y_3_7 + y_4_7
+   + y_5_7 + y_8_7 + y_9_7 + y_10_7 + y_11_7 + y_12_7 + y_13_7 + y_14_7
+   = 1
+ martin_method_second_constraint_57: x_6_8 + y_1_8 + y_2_8 + y_3_8 + y_4_8
+   + y_5_8 + y_7_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_58: x_6_9 + y_1_9 + y_2_9 + y_3_9 + y_4_9
+   + y_5_9 + y_7_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_59: x_6_10 + y_1_10 + y_2_10 + y_3_10
+   + y_4_10 + y_5_10 + y_7_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_60: x_6_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_5_11 + y_7_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_61: x_6_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_62: x_6_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_63: x_6_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_64: x_7_8 + y_1_8 + y_2_8 + y_3_8 + y_4_8
+   + y_5_8 + y_6_8 + y_9_8 + y_10_8 + y_11_8 + y_12_8 + y_13_8 + y_14_8
+   = 1
+ martin_method_second_constraint_65: x_7_9 + y_1_9 + y_2_9 + y_3_9 + y_4_9
+   + y_5_9 + y_6_9 + y_8_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_66: x_7_10 + y_1_10 + y_2_10 + y_3_10
+   + y_4_10 + y_5_10 + y_6_10 + y_8_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_67: x_7_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_5_11 + y_6_11 + y_8_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_68: x_7_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_6_12 + y_8_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_69: x_7_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_8_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_70: x_7_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_8_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_71: x_8_9 + y_1_9 + y_2_9 + y_3_9 + y_4_9
+   + y_5_9 + y_6_9 + y_7_9 + y_10_9 + y_11_9 + y_12_9 + y_13_9 + y_14_9
+   = 1
+ martin_method_second_constraint_72: x_8_10 + y_1_10 + y_2_10 + y_3_10
+   + y_4_10 + y_5_10 + y_6_10 + y_7_10 + y_9_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_73: x_8_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_5_11 + y_6_11 + y_7_11 + y_9_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_74: x_8_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_6_12 + y_7_12 + y_9_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_75: x_8_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_7_13 + y_9_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_76: x_8_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_9_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_77: x_9_10 + y_1_10 + y_2_10 + y_3_10
+   + y_4_10 + y_5_10 + y_6_10 + y_7_10 + y_8_10 + y_11_10 + y_12_10
+   + y_13_10 + y_14_10 = 1
+ martin_method_second_constraint_78: x_9_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_10_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_79: x_9_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_10_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_80: x_9_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_10_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_81: x_9_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_10_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_82: x_10_11 + y_1_11 + y_2_11 + y_3_11
+   + y_4_11 + y_5_11 + y_6_11 + y_7_11 + y_8_11 + y_9_11 + y_12_11
+   + y_13_11 + y_14_11 = 1
+ martin_method_second_constraint_83: x_10_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_11_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_84: x_10_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_11_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_85: x_10_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_11_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_86: x_11_12 + y_1_12 + y_2_12 + y_3_12
+   + y_4_12 + y_5_12 + y_6_12 + y_7_12 + y_8_12 + y_9_12 + y_10_12
+   + y_13_12 + y_14_12 = 1
+ martin_method_second_constraint_87: x_11_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13
+   + y_12_13 + y_14_13 = 1
+ martin_method_second_constraint_88: x_11_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14
+   + y_12_14 + y_13_14 = 1
+ martin_method_second_constraint_89: x_12_13 + y_1_13 + y_2_13 + y_3_13
+   + y_4_13 + y_5_13 + y_6_13 + y_7_13 + y_8_13 + y_9_13 + y_10_13
+   + y_11_13 + y_14_13 = 1
+ martin_method_second_constraint_90: x_12_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14
+   + y_11_14 + y_13_14 = 1
+ martin_method_second_constraint_91: x_13_14 + y_1_14 + y_2_14 + y_3_14
+   + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14
+   + y_11_14 + y_12_14 = 1
  activate_tube_1_2: - x_1_2 + nt_1_2 >= 0
  activate_tube_1_3: - x_1_3 + nt_1_3 >= 0
  activate_tube_1_4: - x_1_4 + nt_1_4 >= 0
@@ -837,7 +1168,24 @@ Binaries
  x_6_7 x_6_8 x_6_9 x_6_10 x_6_11 x_6_12 x_6_13 x_6_14 x_7_8 x_7_9 x_7_10
  x_7_11 x_7_12 x_7_13 x_7_14 x_8_9 x_8_10 x_8_11 x_8_12 x_8_13 x_8_14
  x_9_10 x_9_11 x_9_12 x_9_13 x_9_14 x_10_11 x_10_12 x_10_13 x_10_14 x_11_12
- x_11_13 x_11_14 x_12_13 x_12_14 x_13_14
+ x_11_13 x_11_14 x_12_13 x_12_14 x_13_14 y_1_2 y_2_1 y_1_3 y_3_1 y_1_4
+ y_4_1 y_1_5 y_5_1 y_1_6 y_6_1 y_1_7 y_7_1 y_1_8 y_8_1 y_1_9 y_9_1 y_1_10
+ y_10_1 y_1_11 y_11_1 y_1_12 y_12_1 y_1_13 y_13_1 y_1_14 y_14_1 y_2_3 y_3_2
+ y_2_4 y_4_2 y_2_5 y_5_2 y_2_6 y_6_2 y_2_7 y_7_2 y_2_8 y_8_2 y_2_9 y_9_2
+ y_2_10 y_10_2 y_2_11 y_11_2 y_2_12 y_12_2 y_2_13 y_13_2 y_2_14 y_14_2
+ y_3_4 y_4_3 y_3_5 y_5_3 y_3_6 y_6_3 y_3_7 y_7_3 y_3_8 y_8_3 y_3_9 y_9_3
+ y_3_10 y_10_3 y_3_11 y_11_3 y_3_12 y_12_3 y_3_13 y_13_3 y_3_14 y_14_3
+ y_4_5 y_5_4 y_4_6 y_6_4 y_4_7 y_7_4 y_4_8 y_8_4 y_4_9 y_9_4 y_4_10 y_10_4
+ y_4_11 y_11_4 y_4_12 y_12_4 y_4_13 y_13_4 y_4_14 y_14_4 y_5_6 y_6_5 y_5_7
+ y_7_5 y_5_8 y_8_5 y_5_9 y_9_5 y_5_10 y_10_5 y_5_11 y_11_5 y_5_12 y_12_5
+ y_5_13 y_13_5 y_5_14 y_14_5 y_6_7 y_7_6 y_6_8 y_8_6 y_6_9 y_9_6 y_6_10
+ y_10_6 y_6_11 y_11_6 y_6_12 y_12_6 y_6_13 y_13_6 y_6_14 y_14_6 y_7_8 y_8_7
+ y_7_9 y_9_7 y_7_10 y_10_7 y_7_11 y_11_7 y_7_12 y_12_7 y_7_13 y_13_7 y_7_14
+ y_14_7 y_8_9 y_9_8 y_8_10 y_10_8 y_8_11 y_11_8 y_8_12 y_12_8 y_8_13 y_13_8
+ y_8_14 y_14_8 y_9_10 y_10_9 y_9_11 y_11_9 y_9_12 y_12_9 y_9_13 y_13_9
+ y_9_14 y_14_9 y_10_11 y_11_10 y_10_12 y_12_10 y_10_13 y_13_10 y_10_14
+ y_14_10 y_11_12 y_12_11 y_11_13 y_13_11 y_11_14 y_14_11 y_12_13 y_13_12
+ y_12_14 y_14_12 y_13_14 y_14_13
 Generals
  pax_1_2 pax_1_3 pax_1_4 pax_1_5 pax_1_6 pax_1_7 pax_1_8 pax_1_9 pax_1_10
  pax_1_11 pax_1_12 pax_1_13 pax_1_14 pax_2_3 pax_2_4 pax_2_5 pax_2_6
