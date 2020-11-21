@@ -36,6 +36,19 @@ max_tubes=2
 
 pr=distance_links*0.5*10**(-6)
 
+#years of operation
+year=5
+
+#operational costs per year
+vehic_ops=3.695*year
+station_ops=14.7799*(0.5+np.sqrt(1 + 8*len(links))/2)*year
+energy_cost=0.0000000115*year #(per 1 seat per km)
+
+#maintenance costs per year
+station_main=0.71859*(0.5+np.sqrt(1 + 8*len(links))/2)*year
+tube_main=0.056900*distance_links*year
+vehicles_main=0.00054*year #per seat
+
 pt=distance_links*25.61 #price of construction of tube based on price (million CHF) per kilometre (distance between links times the cost per kilometre assuming we dont tunnel)
 pv=4.500000 #price per vehicle (in million of CHF)
 max_nv=40 #maximum number of vehicles per tube (source: hyperloop commercial feasibility analysis)
@@ -182,12 +195,6 @@ for i in range(0,len(numbers)):
 
 
 
-
-
-
-
-
-
 #if a link is active, have at least 1 tube constructed
 
 for i in range(0,len(numbers)):
@@ -212,12 +219,15 @@ obj=LinExpr()
 
 # objective function
 for i in range(0,len(numbers)):
-    obj+=pr[i]*pax[i]
+    obj+=pr[i]*pax[i]*year
     obj-=c[i]*x[i]
     obj-=pt[i]*nt[i]
-    obj-=pv*nv[i]
-
-
+    obj-=(pv+vehic_ops)*nv[i]
+    obj-=energy_cost*max_np*nv[i]
+    obj-=tube_main[i]*nt[i]
+    obj-=vehicles_main*max_np*nv[i]
+obj-=station_ops
+obj-=station_main
     
 model.setObjective(obj,GRB.MAXIMIZE)
 # Updating the model
@@ -262,10 +272,14 @@ plt.show()
 #revenue per year of operation
 revenue=0
 for i in range(0,len(numbers)):
-    revenue+= solution[i][1]*pr[i]
-    
-print(revenue)
+    revenue+= solution[i][1]*pr[i]*year
 
+cost= 0
+for i in range(0,len(numbers)):
+    cost-=(vehic_ops)*solution[5*len(numbers)+i][1]+energy_cost*max_np*solution[5*len(numbers)+i][1]+tube_main[i]*solution[4*len(numbers)+i][1]
+    cost-=vehicles_main*max_np*solution[5*len(numbers)+i][1]
 
-
-
+cost-=station_ops
+cost-=station_main
+profit=revenue+cost
+print(revenue,cost,profit)
