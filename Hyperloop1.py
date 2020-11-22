@@ -30,25 +30,26 @@ p=[int(combined_population[i]*0.47*2) for i in range(len(links))]
 
 
 #maximum number of tubes
-max_tubes=2
+max_tubes=1
 
 #ticket price based on price per kilometer
 
 pr=distance_links*0.5*10**(-6)
 
 #years of operation
-year=5
-
+year=1
+ratio=1
 #operational costs per year
-vehic_ops=3.695*year
-station_ops=14.7799*(0.5+np.sqrt(1 + 8*len(links))/2)*year
-energy_cost=0.0000000115*year #(per 1 seat per km)
+vehic_ops=3.695*year*ratio
+station_ops=14.7799*(0.5+np.sqrt(1 + 8*len(links))/2)*year*ratio
+energy_cost=0.0000000115*year*ratio#(per 1 seat per km)
 
 #maintenance costs per year
-station_main=0.71859*(0.5+np.sqrt(1 + 8*len(links))/2)*year
-tube_main=0.056900*distance_links*year
-vehicles_main=0.00054*year #per seat
+station_main=0.71859*(0.5+np.sqrt(1 + 8*len(links))/2)*year*ratio
+tube_main=0.056900*distance_links*year*ratio
+vehicles_main=0.00054*year*ratio #per seat
 
+#fixed costs
 pt=distance_links*25.61 #price of construction of tube based on price (million CHF) per kilometre (distance between links times the cost per kilometre assuming we dont tunnel)
 pv=4.500000 #price per vehicle (in million of CHF)
 max_nv=40 #maximum number of vehicles per tube (source: hyperloop commercial feasibility analysis)
@@ -155,6 +156,7 @@ for i in range(0,len(numbers)):
  
 
 
+
 #2 have n-1 links active 
 thisLHS=LinExpr()
 for i in range(0,len(numbers)):
@@ -195,6 +197,7 @@ for i in range(0,len(numbers)):
 
 
 
+
 #if a link is active, have at least 1 tube constructed
 
 for i in range(0,len(numbers)):
@@ -212,6 +215,9 @@ model.update()
     
 
 
+
+
+
 #Defining objective function
 
 obj=LinExpr()
@@ -220,7 +226,7 @@ obj=LinExpr()
 # objective function
 for i in range(0,len(numbers)):
     obj+=pr[i]*pax[i]*year
-    obj-=c[i]*x[i]
+    obj-=c[i]*nt[i]
     obj-=pt[i]*nt[i]
     obj-=(pv+vehic_ops)*nv[i]
     obj-=energy_cost*max_np*nv[i]
@@ -258,13 +264,14 @@ s=0
 
 #Function of loop: finds active links then plots line between nodes of each active link
 for i in range(0,len(numbers)):
-    if solution[i+len(numbers)][1]>=0.9:
+    if solution[i+4*len(numbers)][1]>=0.9:
         
-        s=[int(j) for j in re.findall(r'\d+', solution[i+len(numbers)][0])]
+        s=[int(j) for j in re.findall(r'\d+', solution[i+4*len(numbers)][0])]
         
         plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]),label=numbers[i])
 plt.legend()
 plt.show()
+
 
 
 #additional calculations from results
