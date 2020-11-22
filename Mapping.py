@@ -17,7 +17,7 @@ def distance(lat1, lon1, lat2, lon2):
     a = 0.5 - cos((lat2-lat1)*p)/2 + cos(lat1*p) * cos(lat2*p) * (1-cos((lon2-lon1)*p))/2
     return 12742 * asin(sqrt(a)) #2*R*asin...
 
-cities = pd.read_csv('nl.csv')
+cities = pd.read_csv(r'F:\Users\laure\Downloads\nl.csv')
 
 #constants
 R=6371 #earth radius in km
@@ -48,19 +48,19 @@ combined_population=np.array([])
 pop=0
 d=0
 for i in range(len(lat)):
-    
+
     for j in range(i+1,len(lat)):
         d=  distance(lat[i],lon[i],lat[j],lon[j])
         pop=population[i]+population[j]
-        
-        
+
+
         distance_links=np.append(distance_links,d)
         links.append(f"{i+1}_{j+1}")
         combined_population=np.append(combined_population,pop)
-        
-    
-    
-  
+
+
+
+
 
 
 if __name__ == '__main__':

@@ -15,8 +15,11 @@ plotting = True
 #Changing the following parameters:
 #   - price per tube
 #   - price per vehicle
-#   - max. #vehiles per tube
+#   - max. #vehicles per tube
 #   - max. #vehicles per vehicle
+#   - Ticket price
+#   - Vehicle operation cost
+#   - reduction of maintenance + operational cost
 
 pt_lst=[1,1,1,1,1,1]        #price per tube
 pv_lst=[2,2,2,2,2,2]        #price per vehicle
@@ -27,7 +30,7 @@ max_np_lst=[5,5,5,5,5,5]    #maximum number of passengers per vehicle
 #   - Objective function value / 100
 #   - Number of links
 #   - Number of vehicles
-#   - Number of passengers
+#   - Number of passengers / 10
 #   - Number of tubes
 
 obj_lst = list()

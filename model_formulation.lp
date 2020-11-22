@@ -1,40 +1,51 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Maximize
-  2.66549e-05 pax_1_2 + 1.14368e-05 pax_1_3 + 2.9058e-05 pax_1_4
-   + 5.56581e-05 pax_1_5 + 2.07177e-05 pax_1_6
-   + 1.0044464247059513e-04 pax_1_7 + 5.67676e-05 pax_1_8
-   + 4.21522e-05 pax_1_9 + 8.26898e-05 pax_1_10 + 8.38329e-05 pax_1_11
-   + 6.68371e-05 pax_1_12 + 9.25153e-05 pax_1_13 + 3.93419e-05 pax_1_14
-   + 2.81696e-05 pax_2_3 + 1.5515e-05 pax_2_4 + 5.4927e-05 pax_2_5
-   + 9.87556e-06 pax_2_6 + 7.39578e-05 pax_2_7 + 3.97839e-05 pax_2_8
-   + 3.9514e-05 pax_2_9 + 5.79208e-05 pax_2_10 + 8.72722e-05 pax_2_11
-   + 4.1161e-05 pax_2_12 + 6.58604e-05 pax_2_13 + 6.50337e-05 pax_2_14
-   + 2.40866e-05 pax_3_4 + 4.44837e-05 pax_3_5 + 2.61035e-05 pax_3_6
-   + 0.000101297 pax_3_7 + 4.9587e-05 pax_3_8 + 3.16333e-05 pax_3_9
-   + 8.60758e-05 pax_3_10 + 7.24134e-05 pax_3_11 + 6.45019e-05 pax_3_12
-   + 9.23125e-05 pax_3_13 + 3.79253e-05 pax_3_14 + 3.9494e-05 pax_4_5
-   + 2.28211e-05 pax_4_6 + 7.93825e-05 pax_4_7 + 2.81597e-05 pax_4_8
-   + 2.41465e-05 pax_4_9 + 6.77398e-05 pax_4_10 + 7.19785e-05 pax_4_11
-   + 4.07143e-05 pax_4_12 + 6.9562e-05 pax_4_13 + 6.1656e-05 pax_4_14
-   + 6.06835e-05 pax_5_6 + 1.0608787098582441e-04 pax_5_7
-   + 3.42755e-05 pax_5_8 + 1.54426e-05 pax_5_9
-   + 1.0166618498069019e-04 pax_5_10 + 3.26684e-05 pax_5_11
-   + 6.41673e-05 pax_5_12 + 9.43294e-05 pax_5_13 + 6.55826e-05 pax_5_14
-   + 8.04782e-05 pax_6_7 + 4.91788e-05 pax_6_8 + 4.53185e-05 pax_6_9
-   + 6.198e-05 pax_6_10 + 9.2289e-05 pax_6_11 + 5.03416e-05 pax_6_12
-   + 7.32976e-05 pax_6_13 + 6.00587e-05 pax_6_14 + 7.20192e-05 pax_7_8
-   + 9.55755e-05 pax_7_9 + 2.65605e-05 pax_7_10
-   + 1.3519313682059937e-04 pax_7_11 + 4.19737e-05 pax_7_12
-   + 1.22945e-05 pax_7_13 + 1.3888844724883683e-04 pax_7_14
-   + 2.68483e-05 pax_8_9 + 7.03442e-05 pax_8_10 + 6.36768e-05 pax_8_11
-   + 3.03829e-05 pax_8_12 + 6.0134e-05 pax_8_13 + 8.40778e-05 pax_8_14
-   + 8.85486e-05 pax_9_10 + 4.78336e-05 pax_9_11 + 5.38023e-05 pax_9_12
-   + 8.43411e-05 pax_9_13 + 5.98032e-05 pax_9_14 + 0.000133339 pax_10_11
-   + 4.17336e-05 pax_10_12 + 2.91188e-05 pax_10_13
-   + 1.2201527140589224e-04 pax_10_14 + 9.4024e-05 pax_11_12
-   + 1.2306057852388446e-04 pax_11_13 + 8.05712e-05 pax_11_14
-   + 3.0539e-05 pax_12_13 + 1.0231967697427038e-04 pax_12_14
-   + 1.3017422944727766e-04 pax_13_14 - 1709.611817619991 nt_1_2
+  0.0266548768860657 pax_1_2 + 0.0114368112370997 pax_1_3
+   + 0.0290579643175855 pax_1_4 + 0.0556580844421942 pax_1_5
+   + 0.0207176568702114 pax_1_6 + 0.1004446424705951 pax_1_7
+   + 0.0567675631041653 pax_1_8 + 0.0421522200278156 pax_1_9
+   + 0.0826897816664631 pax_1_10 + 0.0838329280981037 pax_1_11
+   + 0.0668370566648028 pax_1_12 + 0.0925152541777862 pax_1_13
+   + 0.0393419201139444 pax_1_14 + 0.0281695669651948 pax_2_3
+   + 0.0155149580923808 pax_2_4 + 0.0549269543136637 pax_2_5
+   + 0.00987556138905175 pax_2_6 + 0.0739578246089601 pax_2_7
+   + 0.0397838603642478 pax_2_8 + 0.039513963535236 pax_2_9
+   + 0.0579208421507435 pax_2_10 + 0.0872721841880948 pax_2_11
+   + 0.0411609933106161 pax_2_12 + 0.0658604032176266 pax_2_13
+   + 0.0650336747500376 pax_2_14 + 0.0240866231565003 pax_3_4
+   + 0.0444837294325355 pax_3_5 + 0.0261035312466097 pax_3_6
+   + 0.1012970479553878 pax_3_7 + 0.0495870037251438 pax_3_8
+   + 0.0316333430097732 pax_3_9 + 0.0860758178008211 pax_3_10
+   + 0.0724134287154611 pax_3_11 + 0.0645019154859884 pax_3_12
+   + 0.0923125180941085 pax_3_13 + 0.0379253245880371 pax_3_14
+   + 0.0394940213630049 pax_4_5 + 0.0228210909741553 pax_4_6
+   + 0.0793825126663585 pax_4_7 + 0.0281596691172086 pax_4_8
+   + 0.0241465163392801 pax_4_9 + 0.0677398037223709 pax_4_10
+   + 0.0719784640677961 pax_4_11 + 0.0407143285083109 pax_4_12
+   + 0.069562011436555 pax_4_13 + 0.0616559866690613 pax_4_14
+   + 0.0606835088492813 pax_5_6 + 0.1060878709858244 pax_5_7
+   + 0.0342754912276464 pax_5_8 + 0.0154425687141429 pax_5_9
+   + 0.1016661849806902 pax_5_10 + 0.0326684390459144 pax_5_11
+   + 0.064167342988322 pax_5_12 + 0.0943293792667771 pax_5_13
+   + 0.0655825726576831 pax_5_14 + 0.0804781869200017 pax_6_7
+   + 0.0491788251475798 pax_6_8 + 0.0453185219780835 pax_6_9
+   + 0.0619799943422449 pax_6_10 + 0.0922889780437228 pax_6_11
+   + 0.0503416314244157 pax_6_12 + 0.0732975645438672 pax_6_13
+   + 0.0600587189619523 pax_6_14 + 0.0720191720817037 pax_7_8
+   + 0.0955755216274061 pax_7_9 + 0.0265604869419306 pax_7_10
+   + 0.1351931368205994 pax_7_11 + 0.0419736750450243 pax_7_12
+   + 0.0122945160620884 pax_7_13 + 0.1388884472488368 pax_7_14
+   + 0.0268483268440221 pax_8_9 + 0.0703441938656644 pax_8_10
+   + 0.063676788412712 pax_8_11 + 0.0303828908342295 pax_8_12
+   + 0.0601339868352303 pax_8_13 + 0.0840777839980243 pax_8_14
+   + 0.0885486455751045 pax_9_10 + 0.0478336024999401 pax_9_11
+   + 0.0538023254822013 pax_9_12 + 0.0843411243037396 pax_9_13
+   + 0.0598032435657425 pax_9_14 + 0.1333389481666686 pax_10_11
+   + 0.0417336216364567 pax_10_12 + 0.0291188221303005 pax_10_13
+   + 0.1220152714058922 pax_10_14 + 0.0940239602446225 pax_11_12
+   + 0.1230605785238845 pax_11_13 + 0.0805711690767428 pax_11_14
+   + 0.0305389685817571 pax_12_13 + 0.1023196769742704 pax_12_14
+   + 0.1301742294472777 pax_13_14 - 1709.611817619991 nt_1_2
    - 733.5433485740903 nt_1_3 - 1863.742961772756 nt_1_4
    - 3569.842746421008 nt_1_5 - 1328.805650467114 nt_1_6
    - 6442.398834493009 nt_1_7 - 3641.00337642544 nt_1_8
@@ -80,37 +91,52 @@ Maximize
    - 6030.583981337795 nt_11_12 - 7892.957833827721 nt_11_13
    - 5167.73809917939 nt_11_14 - 1958.732798071604 nt_12_13
    - 6562.661297517334 nt_12_14 - 8349.218867673051 nt_13_14
-   - 244.720037 nv_1_2 - 244.720037 nv_1_3 - 244.720037 nv_1_4
-   - 244.720037 nv_1_5 - 244.720037 nv_1_6 - 244.720037 nv_1_7
-   - 244.720037 nv_1_8 - 244.720037 nv_1_9 - 244.720037 nv_1_10
-   - 244.720037 nv_1_11 - 244.720037 nv_1_12 - 244.720037 nv_1_13
-   - 244.720037 nv_1_14 - 244.720037 nv_2_3 - 244.720037 nv_2_4
-   - 244.720037 nv_2_5 - 244.720037 nv_2_6 - 244.720037 nv_2_7
-   - 244.720037 nv_2_8 - 244.720037 nv_2_9 - 244.720037 nv_2_10
-   - 244.720037 nv_2_11 - 244.720037 nv_2_12 - 244.720037 nv_2_13
-   - 244.720037 nv_2_14 - 244.720037 nv_3_4 - 244.720037 nv_3_5
-   - 244.720037 nv_3_6 - 244.720037 nv_3_7 - 244.720037 nv_3_8
-   - 244.720037 nv_3_9 - 244.720037 nv_3_10 - 244.720037 nv_3_11
-   - 244.720037 nv_3_12 - 244.720037 nv_3_13 - 244.720037 nv_3_14
-   - 244.720037 nv_4_5 - 244.720037 nv_4_6 - 244.720037 nv_4_7
-   - 244.720037 nv_4_8 - 244.720037 nv_4_9 - 244.720037 nv_4_10
-   - 244.720037 nv_4_11 - 244.720037 nv_4_12 - 244.720037 nv_4_13
-   - 244.720037 nv_4_14 - 244.720037 nv_5_6 - 244.720037 nv_5_7
-   - 244.720037 nv_5_8 - 244.720037 nv_5_9 - 244.720037 nv_5_10
-   - 244.720037 nv_5_11 - 244.720037 nv_5_12 - 244.720037 nv_5_13
-   - 244.720037 nv_5_14 - 244.720037 nv_6_7 - 244.720037 nv_6_8
-   - 244.720037 nv_6_9 - 244.720037 nv_6_10 - 244.720037 nv_6_11
-   - 244.720037 nv_6_12 - 244.720037 nv_6_13 - 244.720037 nv_6_14
-   - 244.720037 nv_7_8 - 244.720037 nv_7_9 - 244.720037 nv_7_10
-   - 244.720037 nv_7_11 - 244.720037 nv_7_12 - 244.720037 nv_7_13
-   - 244.720037 nv_7_14 - 244.720037 nv_8_9 - 244.720037 nv_8_10
-   - 244.720037 nv_8_11 - 244.720037 nv_8_12 - 244.720037 nv_8_13
-   - 244.720037 nv_8_14 - 244.720037 nv_9_10 - 244.720037 nv_9_11
-   - 244.720037 nv_9_12 - 244.720037 nv_9_13 - 244.720037 nv_9_14
-   - 244.720037 nv_10_11 - 244.720037 nv_10_12 - 244.720037 nv_10_13
-   - 244.720037 nv_10_14 - 244.720037 nv_11_12 - 244.720037 nv_11_13
-   - 244.720037 nv_11_14 - 244.720037 nv_12_13 - 244.720037 nv_12_14
-   - 244.720037 nv_13_14 - 216.97886 Constant
+   - 8.227036999999999 nv_1_2 - 8.227036999999999 nv_1_3
+   - 8.227036999999999 nv_1_4 - 8.227036999999999 nv_1_5
+   - 8.227036999999999 nv_1_6 - 8.227036999999999 nv_1_7
+   - 8.227036999999999 nv_1_8 - 8.227036999999999 nv_1_9
+   - 8.227036999999999 nv_1_10 - 8.227036999999999 nv_1_11
+   - 8.227036999999999 nv_1_12 - 8.227036999999999 nv_1_13
+   - 8.227036999999999 nv_1_14 - 8.227036999999999 nv_2_3
+   - 8.227036999999999 nv_2_4 - 8.227036999999999 nv_2_5
+   - 8.227036999999999 nv_2_6 - 8.227036999999999 nv_2_7
+   - 8.227036999999999 nv_2_8 - 8.227036999999999 nv_2_9
+   - 8.227036999999999 nv_2_10 - 8.227036999999999 nv_2_11
+   - 8.227036999999999 nv_2_12 - 8.227036999999999 nv_2_13
+   - 8.227036999999999 nv_2_14 - 8.227036999999999 nv_3_4
+   - 8.227036999999999 nv_3_5 - 8.227036999999999 nv_3_6
+   - 8.227036999999999 nv_3_7 - 8.227036999999999 nv_3_8
+   - 8.227036999999999 nv_3_9 - 8.227036999999999 nv_3_10
+   - 8.227036999999999 nv_3_11 - 8.227036999999999 nv_3_12
+   - 8.227036999999999 nv_3_13 - 8.227036999999999 nv_3_14
+   - 8.227036999999999 nv_4_5 - 8.227036999999999 nv_4_6
+   - 8.227036999999999 nv_4_7 - 8.227036999999999 nv_4_8
+   - 8.227036999999999 nv_4_9 - 8.227036999999999 nv_4_10
+   - 8.227036999999999 nv_4_11 - 8.227036999999999 nv_4_12
+   - 8.227036999999999 nv_4_13 - 8.227036999999999 nv_4_14
+   - 8.227036999999999 nv_5_6 - 8.227036999999999 nv_5_7
+   - 8.227036999999999 nv_5_8 - 8.227036999999999 nv_5_9
+   - 8.227036999999999 nv_5_10 - 8.227036999999999 nv_5_11
+   - 8.227036999999999 nv_5_12 - 8.227036999999999 nv_5_13
+   - 8.227036999999999 nv_5_14 - 8.227036999999999 nv_6_7
+   - 8.227036999999999 nv_6_8 - 8.227036999999999 nv_6_9
+   - 8.227036999999999 nv_6_10 - 8.227036999999999 nv_6_11
+   - 8.227036999999999 nv_6_12 - 8.227036999999999 nv_6_13
+   - 8.227036999999999 nv_6_14 - 8.227036999999999 nv_7_8
+   - 8.227036999999999 nv_7_9 - 8.227036999999999 nv_7_10
+   - 8.227036999999999 nv_7_11 - 8.227036999999999 nv_7_12
+   - 8.227036999999999 nv_7_13 - 8.227036999999999 nv_7_14
+   - 8.227036999999999 nv_8_9 - 8.227036999999999 nv_8_10
+   - 8.227036999999999 nv_8_11 - 8.227036999999999 nv_8_12
+   - 8.227036999999999 nv_8_13 - 8.227036999999999 nv_8_14
+   - 8.227036999999999 nv_9_10 - 8.227036999999999 nv_9_11
+   - 8.227036999999999 nv_9_12 - 8.227036999999999 nv_9_13
+   - 8.227036999999999 nv_9_14 - 8.227036999999999 nv_10_11
+   - 8.227036999999999 nv_10_12 - 8.227036999999999 nv_10_13
+   - 8.227036999999999 nv_10_14 - 8.227036999999999 nv_11_12
+   - 8.227036999999999 nv_11_13 - 8.227036999999999 nv_11_14
+   - 8.227036999999999 nv_12_13 - 8.227036999999999 nv_12_14
+   - 8.227036999999999 nv_13_14 - 216.97886 Constant
 Subject To
  max_tubes_1_2: - x_1_2 + nt_1_2 <= 0
  max_tubes_1_3: - x_1_3 + nt_1_3 <= 0
@@ -294,6 +320,188 @@ Subject To
  max_vehicles_12_13: - 40 nt_12_13 + nv_12_13 <= 0
  max_vehicles_12_14: - 40 nt_12_14 + nv_12_14 <= 0
  max_vehicles_13_14: - 40 nt_13_14 + nv_13_14 <= 0
+ activate_tube_1_2: - x_1_2 + nt_1_2 >= 0
+ activate_tube_1_3: - x_1_3 + nt_1_3 >= 0
+ activate_tube_1_4: - x_1_4 + nt_1_4 >= 0
+ activate_tube_1_5: - x_1_5 + nt_1_5 >= 0
+ activate_tube_1_6: - x_1_6 + nt_1_6 >= 0
+ activate_tube_1_7: - x_1_7 + nt_1_7 >= 0
+ activate_tube_1_8: - x_1_8 + nt_1_8 >= 0
+ activate_tube_1_9: - x_1_9 + nt_1_9 >= 0
+ activate_tube_1_10: - x_1_10 + nt_1_10 >= 0
+ activate_tube_1_11: - x_1_11 + nt_1_11 >= 0
+ activate_tube_1_12: - x_1_12 + nt_1_12 >= 0
+ activate_tube_1_13: - x_1_13 + nt_1_13 >= 0
+ activate_tube_1_14: - x_1_14 + nt_1_14 >= 0
+ activate_tube_2_3: - x_2_3 + nt_2_3 >= 0
+ activate_tube_2_4: - x_2_4 + nt_2_4 >= 0
+ activate_tube_2_5: - x_2_5 + nt_2_5 >= 0
+ activate_tube_2_6: - x_2_6 + nt_2_6 >= 0
+ activate_tube_2_7: - x_2_7 + nt_2_7 >= 0
+ activate_tube_2_8: - x_2_8 + nt_2_8 >= 0
+ activate_tube_2_9: - x_2_9 + nt_2_9 >= 0
+ activate_tube_2_10: - x_2_10 + nt_2_10 >= 0
+ activate_tube_2_11: - x_2_11 + nt_2_11 >= 0
+ activate_tube_2_12: - x_2_12 + nt_2_12 >= 0
+ activate_tube_2_13: - x_2_13 + nt_2_13 >= 0
+ activate_tube_2_14: - x_2_14 + nt_2_14 >= 0
+ activate_tube_3_4: - x_3_4 + nt_3_4 >= 0
+ activate_tube_3_5: - x_3_5 + nt_3_5 >= 0
+ activate_tube_3_6: - x_3_6 + nt_3_6 >= 0
+ activate_tube_3_7: - x_3_7 + nt_3_7 >= 0
+ activate_tube_3_8: - x_3_8 + nt_3_8 >= 0
+ activate_tube_3_9: - x_3_9 + nt_3_9 >= 0
+ activate_tube_3_10: - x_3_10 + nt_3_10 >= 0
+ activate_tube_3_11: - x_3_11 + nt_3_11 >= 0
+ activate_tube_3_12: - x_3_12 + nt_3_12 >= 0
+ activate_tube_3_13: - x_3_13 + nt_3_13 >= 0
+ activate_tube_3_14: - x_3_14 + nt_3_14 >= 0
+ activate_tube_4_5: - x_4_5 + nt_4_5 >= 0
+ activate_tube_4_6: - x_4_6 + nt_4_6 >= 0
+ activate_tube_4_7: - x_4_7 + nt_4_7 >= 0
+ activate_tube_4_8: - x_4_8 + nt_4_8 >= 0
+ activate_tube_4_9: - x_4_9 + nt_4_9 >= 0
+ activate_tube_4_10: - x_4_10 + nt_4_10 >= 0
+ activate_tube_4_11: - x_4_11 + nt_4_11 >= 0
+ activate_tube_4_12: - x_4_12 + nt_4_12 >= 0
+ activate_tube_4_13: - x_4_13 + nt_4_13 >= 0
+ activate_tube_4_14: - x_4_14 + nt_4_14 >= 0
+ activate_tube_5_6: - x_5_6 + nt_5_6 >= 0
+ activate_tube_5_7: - x_5_7 + nt_5_7 >= 0
+ activate_tube_5_8: - x_5_8 + nt_5_8 >= 0
+ activate_tube_5_9: - x_5_9 + nt_5_9 >= 0
+ activate_tube_5_10: - x_5_10 + nt_5_10 >= 0
+ activate_tube_5_11: - x_5_11 + nt_5_11 >= 0
+ activate_tube_5_12: - x_5_12 + nt_5_12 >= 0
+ activate_tube_5_13: - x_5_13 + nt_5_13 >= 0
+ activate_tube_5_14: - x_5_14 + nt_5_14 >= 0
+ activate_tube_6_7: - x_6_7 + nt_6_7 >= 0
+ activate_tube_6_8: - x_6_8 + nt_6_8 >= 0
+ activate_tube_6_9: - x_6_9 + nt_6_9 >= 0
+ activate_tube_6_10: - x_6_10 + nt_6_10 >= 0
+ activate_tube_6_11: - x_6_11 + nt_6_11 >= 0
+ activate_tube_6_12: - x_6_12 + nt_6_12 >= 0
+ activate_tube_6_13: - x_6_13 + nt_6_13 >= 0
+ activate_tube_6_14: - x_6_14 + nt_6_14 >= 0
+ activate_tube_7_8: - x_7_8 + nt_7_8 >= 0
+ activate_tube_7_9: - x_7_9 + nt_7_9 >= 0
+ activate_tube_7_10: - x_7_10 + nt_7_10 >= 0
+ activate_tube_7_11: - x_7_11 + nt_7_11 >= 0
+ activate_tube_7_12: - x_7_12 + nt_7_12 >= 0
+ activate_tube_7_13: - x_7_13 + nt_7_13 >= 0
+ activate_tube_7_14: - x_7_14 + nt_7_14 >= 0
+ activate_tube_8_9: - x_8_9 + nt_8_9 >= 0
+ activate_tube_8_10: - x_8_10 + nt_8_10 >= 0
+ activate_tube_8_11: - x_8_11 + nt_8_11 >= 0
+ activate_tube_8_12: - x_8_12 + nt_8_12 >= 0
+ activate_tube_8_13: - x_8_13 + nt_8_13 >= 0
+ activate_tube_8_14: - x_8_14 + nt_8_14 >= 0
+ activate_tube_9_10: - x_9_10 + nt_9_10 >= 0
+ activate_tube_9_11: - x_9_11 + nt_9_11 >= 0
+ activate_tube_9_12: - x_9_12 + nt_9_12 >= 0
+ activate_tube_9_13: - x_9_13 + nt_9_13 >= 0
+ activate_tube_9_14: - x_9_14 + nt_9_14 >= 0
+ activate_tube_10_11: - x_10_11 + nt_10_11 >= 0
+ activate_tube_10_12: - x_10_12 + nt_10_12 >= 0
+ activate_tube_10_13: - x_10_13 + nt_10_13 >= 0
+ activate_tube_10_14: - x_10_14 + nt_10_14 >= 0
+ activate_tube_11_12: - x_11_12 + nt_11_12 >= 0
+ activate_tube_11_13: - x_11_13 + nt_11_13 >= 0
+ activate_tube_11_14: - x_11_14 + nt_11_14 >= 0
+ activate_tube_12_13: - x_12_13 + nt_12_13 >= 0
+ activate_tube_12_14: - x_12_14 + nt_12_14 >= 0
+ activate_tube_13_14: - x_13_14 + nt_13_14 >= 0
+ activate_vehicle_1_2: - x_1_2 + nv_1_2 >= 0
+ activate_vehicle_1_3: - x_1_3 + nv_1_3 >= 0
+ activate_vehicle_1_4: - x_1_4 + nv_1_4 >= 0
+ activate_vehicle_1_5: - x_1_5 + nv_1_5 >= 0
+ activate_vehicle_1_6: - x_1_6 + nv_1_6 >= 0
+ activate_vehicle_1_7: - x_1_7 + nv_1_7 >= 0
+ activate_vehicle_1_8: - x_1_8 + nv_1_8 >= 0
+ activate_vehicle_1_9: - x_1_9 + nv_1_9 >= 0
+ activate_vehicle_1_10: - x_1_10 + nv_1_10 >= 0
+ activate_vehicle_1_11: - x_1_11 + nv_1_11 >= 0
+ activate_vehicle_1_12: - x_1_12 + nv_1_12 >= 0
+ activate_vehicle_1_13: - x_1_13 + nv_1_13 >= 0
+ activate_vehicle_1_14: - x_1_14 + nv_1_14 >= 0
+ activate_vehicle_2_3: - x_2_3 + nv_2_3 >= 0
+ activate_vehicle_2_4: - x_2_4 + nv_2_4 >= 0
+ activate_vehicle_2_5: - x_2_5 + nv_2_5 >= 0
+ activate_vehicle_2_6: - x_2_6 + nv_2_6 >= 0
+ activate_vehicle_2_7: - x_2_7 + nv_2_7 >= 0
+ activate_vehicle_2_8: - x_2_8 + nv_2_8 >= 0
+ activate_vehicle_2_9: - x_2_9 + nv_2_9 >= 0
+ activate_vehicle_2_10: - x_2_10 + nv_2_10 >= 0
+ activate_vehicle_2_11: - x_2_11 + nv_2_11 >= 0
+ activate_vehicle_2_12: - x_2_12 + nv_2_12 >= 0
+ activate_vehicle_2_13: - x_2_13 + nv_2_13 >= 0
+ activate_vehicle_2_14: - x_2_14 + nv_2_14 >= 0
+ activate_vehicle_3_4: - x_3_4 + nv_3_4 >= 0
+ activate_vehicle_3_5: - x_3_5 + nv_3_5 >= 0
+ activate_vehicle_3_6: - x_3_6 + nv_3_6 >= 0
+ activate_vehicle_3_7: - x_3_7 + nv_3_7 >= 0
+ activate_vehicle_3_8: - x_3_8 + nv_3_8 >= 0
+ activate_vehicle_3_9: - x_3_9 + nv_3_9 >= 0
+ activate_vehicle_3_10: - x_3_10 + nv_3_10 >= 0
+ activate_vehicle_3_11: - x_3_11 + nv_3_11 >= 0
+ activate_vehicle_3_12: - x_3_12 + nv_3_12 >= 0
+ activate_vehicle_3_13: - x_3_13 + nv_3_13 >= 0
+ activate_vehicle_3_14: - x_3_14 + nv_3_14 >= 0
+ activate_vehicle_4_5: - x_4_5 + nv_4_5 >= 0
+ activate_vehicle_4_6: - x_4_6 + nv_4_6 >= 0
+ activate_vehicle_4_7: - x_4_7 + nv_4_7 >= 0
+ activate_vehicle_4_8: - x_4_8 + nv_4_8 >= 0
+ activate_vehicle_4_9: - x_4_9 + nv_4_9 >= 0
+ activate_vehicle_4_10: - x_4_10 + nv_4_10 >= 0
+ activate_vehicle_4_11: - x_4_11 + nv_4_11 >= 0
+ activate_vehicle_4_12: - x_4_12 + nv_4_12 >= 0
+ activate_vehicle_4_13: - x_4_13 + nv_4_13 >= 0
+ activate_vehicle_4_14: - x_4_14 + nv_4_14 >= 0
+ activate_vehicle_5_6: - x_5_6 + nv_5_6 >= 0
+ activate_vehicle_5_7: - x_5_7 + nv_5_7 >= 0
+ activate_vehicle_5_8: - x_5_8 + nv_5_8 >= 0
+ activate_vehicle_5_9: - x_5_9 + nv_5_9 >= 0
+ activate_vehicle_5_10: - x_5_10 + nv_5_10 >= 0
+ activate_vehicle_5_11: - x_5_11 + nv_5_11 >= 0
+ activate_vehicle_5_12: - x_5_12 + nv_5_12 >= 0
+ activate_vehicle_5_13: - x_5_13 + nv_5_13 >= 0
+ activate_vehicle_5_14: - x_5_14 + nv_5_14 >= 0
+ activate_vehicle_6_7: - x_6_7 + nv_6_7 >= 0
+ activate_vehicle_6_8: - x_6_8 + nv_6_8 >= 0
+ activate_vehicle_6_9: - x_6_9 + nv_6_9 >= 0
+ activate_vehicle_6_10: - x_6_10 + nv_6_10 >= 0
+ activate_vehicle_6_11: - x_6_11 + nv_6_11 >= 0
+ activate_vehicle_6_12: - x_6_12 + nv_6_12 >= 0
+ activate_vehicle_6_13: - x_6_13 + nv_6_13 >= 0
+ activate_vehicle_6_14: - x_6_14 + nv_6_14 >= 0
+ activate_vehicle_7_8: - x_7_8 + nv_7_8 >= 0
+ activate_vehicle_7_9: - x_7_9 + nv_7_9 >= 0
+ activate_vehicle_7_10: - x_7_10 + nv_7_10 >= 0
+ activate_vehicle_7_11: - x_7_11 + nv_7_11 >= 0
+ activate_vehicle_7_12: - x_7_12 + nv_7_12 >= 0
+ activate_vehicle_7_13: - x_7_13 + nv_7_13 >= 0
+ activate_vehicle_7_14: - x_7_14 + nv_7_14 >= 0
+ activate_vehicle_8_9: - x_8_9 + nv_8_9 >= 0
+ activate_vehicle_8_10: - x_8_10 + nv_8_10 >= 0
+ activate_vehicle_8_11: - x_8_11 + nv_8_11 >= 0
+ activate_vehicle_8_12: - x_8_12 + nv_8_12 >= 0
+ activate_vehicle_8_13: - x_8_13 + nv_8_13 >= 0
+ activate_vehicle_8_14: - x_8_14 + nv_8_14 >= 0
+ activate_vehicle_9_10: - x_9_10 + nv_9_10 >= 0
+ activate_vehicle_9_11: - x_9_11 + nv_9_11 >= 0
+ activate_vehicle_9_12: - x_9_12 + nv_9_12 >= 0
+ activate_vehicle_9_13: - x_9_13 + nv_9_13 >= 0
+ activate_vehicle_9_14: - x_9_14 + nv_9_14 >= 0
+ activate_vehicle_10_11: - x_10_11 + nv_10_11 >= 0
+ activate_vehicle_10_12: - x_10_12 + nv_10_12 >= 0
+ activate_vehicle_10_13: - x_10_13 + nv_10_13 >= 0
+ activate_vehicle_10_14: - x_10_14 + nv_10_14 >= 0
+ activate_vehicle_11_12: - x_11_12 + nv_11_12 >= 0
+ activate_vehicle_11_13: - x_11_13 + nv_11_13 >= 0
+ activate_vehicle_11_14: - x_11_14 + nv_11_14 >= 0
+ activate_vehicle_12_13: - x_12_13 + nv_12_13 >= 0
+ activate_vehicle_12_14: - x_12_14 + nv_12_14 >= 0
+ activate_vehicle_13_14: - x_13_14 + nv_13_14 >= 0
  max_passengers_vehicle1_2: pax_1_2 - 438000 nv_1_2 <= 0
  max_passengers_vehicle1_3: pax_1_3 - 438000 nv_1_3 <= 0
  max_passengers_vehicle1_4: pax_1_4 - 438000 nv_1_4 <= 0
@@ -852,188 +1060,6 @@ Subject To
  martin_method_second_constraint_91: x_13_14 + y_1_14 + y_2_14 + y_3_14
    + y_4_14 + y_5_14 + y_6_14 + y_7_14 + y_8_14 + y_9_14 + y_10_14
    + y_11_14 + y_12_14 = 1
- activate_tube_1_2: - x_1_2 + nt_1_2 >= 0
- activate_tube_1_3: - x_1_3 + nt_1_3 >= 0
- activate_tube_1_4: - x_1_4 + nt_1_4 >= 0
- activate_tube_1_5: - x_1_5 + nt_1_5 >= 0
- activate_tube_1_6: - x_1_6 + nt_1_6 >= 0
- activate_tube_1_7: - x_1_7 + nt_1_7 >= 0
- activate_tube_1_8: - x_1_8 + nt_1_8 >= 0
- activate_tube_1_9: - x_1_9 + nt_1_9 >= 0
- activate_tube_1_10: - x_1_10 + nt_1_10 >= 0
- activate_tube_1_11: - x_1_11 + nt_1_11 >= 0
- activate_tube_1_12: - x_1_12 + nt_1_12 >= 0
- activate_tube_1_13: - x_1_13 + nt_1_13 >= 0
- activate_tube_1_14: - x_1_14 + nt_1_14 >= 0
- activate_tube_2_3: - x_2_3 + nt_2_3 >= 0
- activate_tube_2_4: - x_2_4 + nt_2_4 >= 0
- activate_tube_2_5: - x_2_5 + nt_2_5 >= 0
- activate_tube_2_6: - x_2_6 + nt_2_6 >= 0
- activate_tube_2_7: - x_2_7 + nt_2_7 >= 0
- activate_tube_2_8: - x_2_8 + nt_2_8 >= 0
- activate_tube_2_9: - x_2_9 + nt_2_9 >= 0
- activate_tube_2_10: - x_2_10 + nt_2_10 >= 0
- activate_tube_2_11: - x_2_11 + nt_2_11 >= 0
- activate_tube_2_12: - x_2_12 + nt_2_12 >= 0
- activate_tube_2_13: - x_2_13 + nt_2_13 >= 0
- activate_tube_2_14: - x_2_14 + nt_2_14 >= 0
- activate_tube_3_4: - x_3_4 + nt_3_4 >= 0
- activate_tube_3_5: - x_3_5 + nt_3_5 >= 0
- activate_tube_3_6: - x_3_6 + nt_3_6 >= 0
- activate_tube_3_7: - x_3_7 + nt_3_7 >= 0
- activate_tube_3_8: - x_3_8 + nt_3_8 >= 0
- activate_tube_3_9: - x_3_9 + nt_3_9 >= 0
- activate_tube_3_10: - x_3_10 + nt_3_10 >= 0
- activate_tube_3_11: - x_3_11 + nt_3_11 >= 0
- activate_tube_3_12: - x_3_12 + nt_3_12 >= 0
- activate_tube_3_13: - x_3_13 + nt_3_13 >= 0
- activate_tube_3_14: - x_3_14 + nt_3_14 >= 0
- activate_tube_4_5: - x_4_5 + nt_4_5 >= 0
- activate_tube_4_6: - x_4_6 + nt_4_6 >= 0
- activate_tube_4_7: - x_4_7 + nt_4_7 >= 0
- activate_tube_4_8: - x_4_8 + nt_4_8 >= 0
- activate_tube_4_9: - x_4_9 + nt_4_9 >= 0
- activate_tube_4_10: - x_4_10 + nt_4_10 >= 0
- activate_tube_4_11: - x_4_11 + nt_4_11 >= 0
- activate_tube_4_12: - x_4_12 + nt_4_12 >= 0
- activate_tube_4_13: - x_4_13 + nt_4_13 >= 0
- activate_tube_4_14: - x_4_14 + nt_4_14 >= 0
- activate_tube_5_6: - x_5_6 + nt_5_6 >= 0
- activate_tube_5_7: - x_5_7 + nt_5_7 >= 0
- activate_tube_5_8: - x_5_8 + nt_5_8 >= 0
- activate_tube_5_9: - x_5_9 + nt_5_9 >= 0
- activate_tube_5_10: - x_5_10 + nt_5_10 >= 0
- activate_tube_5_11: - x_5_11 + nt_5_11 >= 0
- activate_tube_5_12: - x_5_12 + nt_5_12 >= 0
- activate_tube_5_13: - x_5_13 + nt_5_13 >= 0
- activate_tube_5_14: - x_5_14 + nt_5_14 >= 0
- activate_tube_6_7: - x_6_7 + nt_6_7 >= 0
- activate_tube_6_8: - x_6_8 + nt_6_8 >= 0
- activate_tube_6_9: - x_6_9 + nt_6_9 >= 0
- activate_tube_6_10: - x_6_10 + nt_6_10 >= 0
- activate_tube_6_11: - x_6_11 + nt_6_11 >= 0
- activate_tube_6_12: - x_6_12 + nt_6_12 >= 0
- activate_tube_6_13: - x_6_13 + nt_6_13 >= 0
- activate_tube_6_14: - x_6_14 + nt_6_14 >= 0
- activate_tube_7_8: - x_7_8 + nt_7_8 >= 0
- activate_tube_7_9: - x_7_9 + nt_7_9 >= 0
- activate_tube_7_10: - x_7_10 + nt_7_10 >= 0
- activate_tube_7_11: - x_7_11 + nt_7_11 >= 0
- activate_tube_7_12: - x_7_12 + nt_7_12 >= 0
- activate_tube_7_13: - x_7_13 + nt_7_13 >= 0
- activate_tube_7_14: - x_7_14 + nt_7_14 >= 0
- activate_tube_8_9: - x_8_9 + nt_8_9 >= 0
- activate_tube_8_10: - x_8_10 + nt_8_10 >= 0
- activate_tube_8_11: - x_8_11 + nt_8_11 >= 0
- activate_tube_8_12: - x_8_12 + nt_8_12 >= 0
- activate_tube_8_13: - x_8_13 + nt_8_13 >= 0
- activate_tube_8_14: - x_8_14 + nt_8_14 >= 0
- activate_tube_9_10: - x_9_10 + nt_9_10 >= 0
- activate_tube_9_11: - x_9_11 + nt_9_11 >= 0
- activate_tube_9_12: - x_9_12 + nt_9_12 >= 0
- activate_tube_9_13: - x_9_13 + nt_9_13 >= 0
- activate_tube_9_14: - x_9_14 + nt_9_14 >= 0
- activate_tube_10_11: - x_10_11 + nt_10_11 >= 0
- activate_tube_10_12: - x_10_12 + nt_10_12 >= 0
- activate_tube_10_13: - x_10_13 + nt_10_13 >= 0
- activate_tube_10_14: - x_10_14 + nt_10_14 >= 0
- activate_tube_11_12: - x_11_12 + nt_11_12 >= 0
- activate_tube_11_13: - x_11_13 + nt_11_13 >= 0
- activate_tube_11_14: - x_11_14 + nt_11_14 >= 0
- activate_tube_12_13: - x_12_13 + nt_12_13 >= 0
- activate_tube_12_14: - x_12_14 + nt_12_14 >= 0
- activate_tube_13_14: - x_13_14 + nt_13_14 >= 0
- activate_vehicle_1_2: - nt_1_2 + nv_1_2 >= 0
- activate_vehicle_1_3: - nt_1_3 + nv_1_3 >= 0
- activate_vehicle_1_4: - nt_1_4 + nv_1_4 >= 0
- activate_vehicle_1_5: - nt_1_5 + nv_1_5 >= 0
- activate_vehicle_1_6: - nt_1_6 + nv_1_6 >= 0
- activate_vehicle_1_7: - nt_1_7 + nv_1_7 >= 0
- activate_vehicle_1_8: - nt_1_8 + nv_1_8 >= 0
- activate_vehicle_1_9: - nt_1_9 + nv_1_9 >= 0
- activate_vehicle_1_10: - nt_1_10 + nv_1_10 >= 0
- activate_vehicle_1_11: - nt_1_11 + nv_1_11 >= 0
- activate_vehicle_1_12: - nt_1_12 + nv_1_12 >= 0
- activate_vehicle_1_13: - nt_1_13 + nv_1_13 >= 0
- activate_vehicle_1_14: - nt_1_14 + nv_1_14 >= 0
- activate_vehicle_2_3: - nt_2_3 + nv_2_3 >= 0
- activate_vehicle_2_4: - nt_2_4 + nv_2_4 >= 0
- activate_vehicle_2_5: - nt_2_5 + nv_2_5 >= 0
- activate_vehicle_2_6: - nt_2_6 + nv_2_6 >= 0
- activate_vehicle_2_7: - nt_2_7 + nv_2_7 >= 0
- activate_vehicle_2_8: - nt_2_8 + nv_2_8 >= 0
- activate_vehicle_2_9: - nt_2_9 + nv_2_9 >= 0
- activate_vehicle_2_10: - nt_2_10 + nv_2_10 >= 0
- activate_vehicle_2_11: - nt_2_11 + nv_2_11 >= 0
- activate_vehicle_2_12: - nt_2_12 + nv_2_12 >= 0
- activate_vehicle_2_13: - nt_2_13 + nv_2_13 >= 0
- activate_vehicle_2_14: - nt_2_14 + nv_2_14 >= 0
- activate_vehicle_3_4: - nt_3_4 + nv_3_4 >= 0
- activate_vehicle_3_5: - nt_3_5 + nv_3_5 >= 0
- activate_vehicle_3_6: - nt_3_6 + nv_3_6 >= 0
- activate_vehicle_3_7: - nt_3_7 + nv_3_7 >= 0
- activate_vehicle_3_8: - nt_3_8 + nv_3_8 >= 0
- activate_vehicle_3_9: - nt_3_9 + nv_3_9 >= 0
- activate_vehicle_3_10: - nt_3_10 + nv_3_10 >= 0
- activate_vehicle_3_11: - nt_3_11 + nv_3_11 >= 0
- activate_vehicle_3_12: - nt_3_12 + nv_3_12 >= 0
- activate_vehicle_3_13: - nt_3_13 + nv_3_13 >= 0
- activate_vehicle_3_14: - nt_3_14 + nv_3_14 >= 0
- activate_vehicle_4_5: - nt_4_5 + nv_4_5 >= 0
- activate_vehicle_4_6: - nt_4_6 + nv_4_6 >= 0
- activate_vehicle_4_7: - nt_4_7 + nv_4_7 >= 0
- activate_vehicle_4_8: - nt_4_8 + nv_4_8 >= 0
- activate_vehicle_4_9: - nt_4_9 + nv_4_9 >= 0
- activate_vehicle_4_10: - nt_4_10 + nv_4_10 >= 0
- activate_vehicle_4_11: - nt_4_11 + nv_4_11 >= 0
- activate_vehicle_4_12: - nt_4_12 + nv_4_12 >= 0
- activate_vehicle_4_13: - nt_4_13 + nv_4_13 >= 0
- activate_vehicle_4_14: - nt_4_14 + nv_4_14 >= 0
- activate_vehicle_5_6: - nt_5_6 + nv_5_6 >= 0
- activate_vehicle_5_7: - nt_5_7 + nv_5_7 >= 0
- activate_vehicle_5_8: - nt_5_8 + nv_5_8 >= 0
- activate_vehicle_5_9: - nt_5_9 + nv_5_9 >= 0
- activate_vehicle_5_10: - nt_5_10 + nv_5_10 >= 0
- activate_vehicle_5_11: - nt_5_11 + nv_5_11 >= 0
- activate_vehicle_5_12: - nt_5_12 + nv_5_12 >= 0
- activate_vehicle_5_13: - nt_5_13 + nv_5_13 >= 0
- activate_vehicle_5_14: - nt_5_14 + nv_5_14 >= 0
- activate_vehicle_6_7: - nt_6_7 + nv_6_7 >= 0
- activate_vehicle_6_8: - nt_6_8 + nv_6_8 >= 0
- activate_vehicle_6_9: - nt_6_9 + nv_6_9 >= 0
- activate_vehicle_6_10: - nt_6_10 + nv_6_10 >= 0
- activate_vehicle_6_11: - nt_6_11 + nv_6_11 >= 0
- activate_vehicle_6_12: - nt_6_12 + nv_6_12 >= 0
- activate_vehicle_6_13: - nt_6_13 + nv_6_13 >= 0
- activate_vehicle_6_14: - nt_6_14 + nv_6_14 >= 0
- activate_vehicle_7_8: - nt_7_8 + nv_7_8 >= 0
- activate_vehicle_7_9: - nt_7_9 + nv_7_9 >= 0
- activate_vehicle_7_10: - nt_7_10 + nv_7_10 >= 0
- activate_vehicle_7_11: - nt_7_11 + nv_7_11 >= 0
- activate_vehicle_7_12: - nt_7_12 + nv_7_12 >= 0
- activate_vehicle_7_13: - nt_7_13 + nv_7_13 >= 0
- activate_vehicle_7_14: - nt_7_14 + nv_7_14 >= 0
- activate_vehicle_8_9: - nt_8_9 + nv_8_9 >= 0
- activate_vehicle_8_10: - nt_8_10 + nv_8_10 >= 0
- activate_vehicle_8_11: - nt_8_11 + nv_8_11 >= 0
- activate_vehicle_8_12: - nt_8_12 + nv_8_12 >= 0
- activate_vehicle_8_13: - nt_8_13 + nv_8_13 >= 0
- activate_vehicle_8_14: - nt_8_14 + nv_8_14 >= 0
- activate_vehicle_9_10: - nt_9_10 + nv_9_10 >= 0
- activate_vehicle_9_11: - nt_9_11 + nv_9_11 >= 0
- activate_vehicle_9_12: - nt_9_12 + nv_9_12 >= 0
- activate_vehicle_9_13: - nt_9_13 + nv_9_13 >= 0
- activate_vehicle_9_14: - nt_9_14 + nv_9_14 >= 0
- activate_vehicle_10_11: - nt_10_11 + nv_10_11 >= 0
- activate_vehicle_10_12: - nt_10_12 + nv_10_12 >= 0
- activate_vehicle_10_13: - nt_10_13 + nv_10_13 >= 0
- activate_vehicle_10_14: - nt_10_14 + nv_10_14 >= 0
- activate_vehicle_11_12: - nt_11_12 + nv_11_12 >= 0
- activate_vehicle_11_13: - nt_11_13 + nv_11_13 >= 0
- activate_vehicle_11_14: - nt_11_14 + nv_11_14 >= 0
- activate_vehicle_12_13: - nt_12_13 + nv_12_13 >= 0
- activate_vehicle_12_14: - nt_12_14 + nv_12_14 >= 0
- activate_vehicle_13_14: - nt_13_14 + nv_13_14 >= 0
 Bounds
  pax_1_2 <= 2.29078e+06
  pax_1_3 <= 2.26634e+06

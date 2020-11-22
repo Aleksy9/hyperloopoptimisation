@@ -11,6 +11,14 @@ import re
 from Random_operation_optimization import dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
 from Mapping import points,combined_population,distance_links,links
 
+def get_data(solution):
+    data_result = list()
+    data_result.append(solution[0])
+    for data in solution:
+        if int(data[1]) != 0 and data[0] != 'Objective value':
+            data_result.append(data)
+    return data_result
+
 
 cwd = os.getcwd()
 
@@ -27,13 +35,10 @@ coord=points
 #maximum passengers per line per year
 p=[int(combined_population[i]*0.47*2) for i in range(len(links))]
 
-
-
 #maximum number of tubes
 max_tubes=1
 
 #ticket price based on price per kilometer
-
 pr=distance_links*0.5*10**(-6)
 
 #years of operation
@@ -42,7 +47,7 @@ ratio=1
 #operational costs per year
 vehic_ops=3.695*year*ratio
 station_ops=14.7799*(0.5+np.sqrt(1 + 8*len(links))/2)*year*ratio
-energy_cost=0.0000000115*year*ratio#(per 1 seat per km)
+energy_cost=0.0000000115*year*ratio #(per 1 seat per km)
 
 #maintenance costs per year
 station_main=0.71859*(0.5+np.sqrt(1 + 8*len(links))/2)*year*ratio
@@ -126,8 +131,8 @@ model.update()
 
 #setting up constraints =========================================
 thisLHS=LinExpr()
-#maximum amount of tubes per line constraint
 
+#maximum amount of tubes per line constraint
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= nt[i]-x[i]*max_tubes
@@ -135,14 +140,27 @@ for i in range(0,len(numbers)):
 
     
 #maximum number of vehicles per line
-
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= nv[i]-nt[i]*max_nv
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_vehicles_%s"%(numbers[i]))
- 
-#maximum amount of passengers between two lines based on number of vehicles
 
+
+#if a link is active, have at least 1 tube constructed
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= nt[i]-x[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_tube_%s"%numbers[i])
+
+
+#if a tube is built, we require at least one vehicle to run in it
+for i in range(0,len(numbers)):
+    thisLHS=LinExpr()
+    thisLHS+= nv[i]-x[i]
+    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_vehicle_%s"%numbers[i])
+
+
+#maximum amount of passengers between two lines based on number of vehicles
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
     thisLHS+= pax[i]-nv[i]*max_np
@@ -155,16 +173,14 @@ for i in range(0,len(numbers)):
     model.addConstr(lhs=thisLHS, sense=GRB.LESS_EQUAL, rhs=0,name="max_passengers_%s"%(numbers[i]))
  
 
-
-
 #2 have n-1 links active 
 thisLHS=LinExpr()
 for i in range(0,len(numbers)):
-    
     thisLHS+= x[i]
 model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=(0.5+np.sqrt(1 + 8*len(numbers))/2-1),name="min_amount_links")
 
-#new subtour elimination method
+
+#-----new subtour elimination method-----
 #constraint 1
 for i in range(0,len(numbers)):
     thisLHS=LinExpr()
@@ -193,24 +209,6 @@ for i in range(0,len(numbers)):
     model.addConstr(lhs=thisLHS, sense=GRB.EQUAL, rhs=1,name="martin_method_second_constraint_%s"%(i+1))
         
 
-
-
-
-
-
-#if a link is active, have at least 1 tube constructed
-
-for i in range(0,len(numbers)):
-    thisLHS=LinExpr()
-    thisLHS+= nt[i]-x[i]
-    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_tube_%s"%numbers[i])
-
-#if a tube is built, we require at least one vehicle to run in it
-
-for i in range(0,len(numbers)):
-    thisLHS=LinExpr()
-    thisLHS+= nv[i]-nt[i]
-    model.addConstr(lhs=thisLHS, sense=GRB.GREATER_EQUAL, rhs=0,name="activate_vehicle_%s"%numbers[i])
 model.update()
     
 
@@ -231,7 +229,7 @@ for i in range(0,len(numbers)):
     obj-=(pv+vehic_ops)*nv[i]
     obj-=energy_cost*max_np*nv[i]
     obj-=tube_main[i]*nt[i]
-    obj-=vehicles_main*max_np*nv[i]
+    obj-=vehicles_main*50*nv[i] #50 is amount of seats in a vehicle
 obj-=station_ops
 obj-=station_main
     
@@ -243,21 +241,21 @@ model.write('model_formulation.lp')
 
 
 model.optimize()
-# Keep track of end time to compute overall comptuational performance 
+# Keep track of end time to compute overall computational performance
 endTime   = time.time()
 
 # Saving our solution in the form [name of variable, value of variable]
-solution = []
+solution = [['Objective value',int(model.ObjVal)]]
 for v in model.getVars():
      solution.append([v.varName,v.x])
 
+#getting data
+data = get_data(solution)
 
 
-#results visualisation
+
+#-----------------results visualisation---------------------------
 #city coordinates
-
-
-
 plt.scatter(coord[:,0],coord[:,1])
 
 s=0
