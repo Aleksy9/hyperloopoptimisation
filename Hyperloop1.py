@@ -9,7 +9,7 @@ from copy import deepcopy
 import matplotlib.pyplot as plt
 import re
 from Random_operation_optimization import dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
-from Mapping import points,combined_population,distance_links,links
+from Mapping import points,combined_population,distance_links,links, cities
 
 def get_data(solution):
     data_result = list()
@@ -42,7 +42,7 @@ max_tubes=1
 pr=distance_links*0.5*10**(-6)
 
 #years of operation
-year=1
+year=100
 ratio=1
 #operational costs per year
 vehic_ops=3.695*year*ratio
@@ -250,15 +250,15 @@ for v in model.getVars():
      solution.append([v.varName,v.x])
 
 #getting data
-data = get_data(solution)
+data_res = get_data(solution)
 
 
 
 #-----------------results visualisation---------------------------
-#city coordinates
-plt.scatter(coord[:,0],coord[:,1])
 
 s=0
+img = plt.imread(r'F:\Users\laure\Downloads\nl_map.gif')
+fig, ax = plt.subplots()
 
 #Function of loop: finds active links then plots line between nodes of each active link
 for i in range(0,len(numbers)):
@@ -266,11 +266,24 @@ for i in range(0,len(numbers)):
         
         s=[int(j) for j in re.findall(r'\d+', solution[i+4*len(numbers)][0])]
         
-        plt.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]),label=numbers[i])
-plt.legend()
-plt.show()
+        ax.plot((coord[s[0]-1,0],coord[s[1]-1,0]),(coord[s[0]-1,1],coord[s[1]-1,1]),label=numbers[i-1])
+
+#city coordinates
+label=cities['city'].values
+lon = coord[:,0]
+lat = coord[:,1]
+ax.scatter(lon,lat)
+for i in range(len(lat)):
+    ax.text(lon[i]-0.25,lat[i]+0.05,label[i])
+ax.imshow(img, extent = [3.4,7,50.78,53.5])
+ax.legend()
+ax.set_xlabel('longitude [°]')
+ax.set_ylabel('lattitude [°]')
+ax.set_title('Network for cities in The Netherlands')
+#plt.show()
 
 
+print(data_res)
 
 #additional calculations from results
 

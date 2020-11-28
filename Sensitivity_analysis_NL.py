@@ -9,22 +9,22 @@ from copy import deepcopy
 import matplotlib.pyplot as plt
 import re
 from Random_operation_optimization import points, dist, connections,amount_passengers_node, Ticket_price_node, land_cost_node, amount_vehicles_tube, price_vehicle, number_passengers_vehicle, max_tubes_rand
-from Mapping import points,combined_population,distance_links,links
+from Mapping import points,combined_population,distance_links,links, cities
 
 plotting = True
 
 #Changing the following parameters:
-#   - price per tube
-#   - price per vehicle
+#   - 2Ticket price
+#   - 1price per tube
+#   - 3price per vehicle
 #   - max. #vehicles per tube
-#   - max. #vehicles per vehicle
-#   - Ticket price
-#   - Vehicle operation cost
+#   - 3max. #persons per vehicle
+#   - 3Vehicle operation cost
 #   - reduction of maintenance + operational cost
 
-it_n = 5 #number of points calculated
+it_n = 35 #number of points calculated
 year = 1
-ratio = np.linspace(1,150,it_n)
+ratio = np.linspace(1,45,it_n)
 ratio_decr = 1/ratio
 
 ticket_price = distance_links * 0.5 * 10 ** (-6)
@@ -36,16 +36,16 @@ tube_main_price = 0.056900 * distance_links * year
 vehicl_main_price = 0.00054 * year
 price_tube = distance_links * 25.61
 
-pt_lst= it_n*[price_tube] #np.multiply.outer(ratio_decr,price_tube)                                                       #price per tube
-pv_lst=it_n*[4.5]                                                                           #price per vehicle
+pt_lst= it_n*[price_tube] #np.multiply.outer(ratio_decr,price_tube)                         #price per tube
+pv_lst=it_n*[4.5]                                                                     #price per vehicle
 max_nv_lst=it_n*[40]                                                                        #maximum number of vehicles per tube
-max_np_lst= ratio*[438000] #it_n*[438000]                                                    #maximum number of passengers per vehicle
-pr_lst = it_n*[ticket_price] #np.multiply.outer(ratio,ticket_price)                           #ticket price
+max_np_lst= it_n*[438000] #ratio*[438000]                                                   #maximum number of passengers per vehicle
+pr_lst = it_n*[ticket_price] #np.multiply.outer(ratio,ticket_price)                         #ticket price
 vehic_ops_lst = it_n*[vehicl_ops_price] #ratio_decr*[vehicl_ops_price]                      #vehicle operation cost
-station_ops_lst = it_n*[station_ops_price] #ratio_decr*[station_ops_price]                  #station cost
-energy_cost_lst = it_n*[energy_price] #ratio_decr*[energy_price]                            #energy cost per passenger
-station_main_lst = it_n*[station_main_price] #ratio_decr*[station_main_price]               #station maintenance cost
-tube_main_lst = it_n*[tube_main_price] #np.multiply.outer(ratio_decr, tube_main_price)      #tube maintenance cost
+station_ops_lst = ratio_decr*[station_ops_price] #ratio_decr*[station_ops_price]                  #station cost
+energy_cost_lst = ratio_decr*[energy_price] #ratio_decr*[energy_price]                            #energy cost per passenger
+station_main_lst = ratio_decr*[station_main_price] #ratio_decr*[station_main_price]               #station maintenance cost
+tube_main_lst = np.multiply.outer(ratio_decr, tube_main_price) #it_n*[tube_main_price]      #tube maintenance cost
 vehicles_main_lst = it_n*[vehicl_main_price] #ratio_decr*[vehicl_main_price]                 #vehicles maintenance
 
 #Parameters to be collected:
@@ -74,22 +74,22 @@ def get_data(solution):
 
 ######-------------------MAIN LOOP-----------------------######
 
-for i in range(it_n):
-    pt = pt_lst[i]
-    pv = pv_lst[i]
-    max_nv = max_nv_lst[i]
-    max_np = max_np_lst[i]
+for n in range(it_n):
+    pt = pt_lst[n]
+    pv = pv_lst[n]
+    max_nv = max_nv_lst[n]
+    max_np = max_np_lst[n]
     # ticket price based on price per kilometer
-    pr = pr_lst[i]
+    pr = pr_lst[n]
 
     # operational costs per year
-    vehic_ops = vehic_ops_lst[i]
-    station_ops = station_ops_lst[i]
-    energy_cost = energy_cost_lst[i]  # (per 1 seat per km)
+    vehic_ops = vehic_ops_lst[n]
+    station_ops = station_ops_lst[n]
+    energy_cost = energy_cost_lst[n]  # (per 1 seat per km)
     # maintenance costs per year
-    station_main = station_main_lst[i]
-    tube_main = tube_main_lst[i]
-    vehicles_main = vehicles_main_lst[i]  # per seat
+    station_main = station_main_lst[n]
+    tube_main = tube_main_lst[n]
+    vehicles_main = vehicles_main_lst[n]  # per seat
 
     #---------------------------------------------------------------------------------#
 
@@ -115,6 +115,7 @@ for i in range(it_n):
     # setting up variables ======================================
     # node numbers
     numbers = links
+
 
     # create list of all indices that connect one node
     indices = np.array([])
@@ -283,23 +284,6 @@ for i in range(it_n):
 
 
 
-    # results visualisation
-    # city coordinates
-
-    #
-    # plt.scatter(coord[:, 0], coord[:, 1])
-    #
-    # s = 0
-    #
-    # # Function of loop: finds active links then plots line between nodes of each active link
-    # for i in range(0, len(numbers)):
-    #     if solution[i + len(numbers)+1][1] >= 0.9:
-    #         s = [int(j) for j in re.findall(r'\d+', solution[i + len(numbers)][0])]
-    #
-    #         plt.plot((coord[s[0] - 1, 0], coord[s[1] - 1, 0]), (coord[s[0] - 1, 1], coord[s[1] - 1, 1]), label=numbers[i])
-    # plt.legend()
-    # plt.show()
-
     # ----GETTING DATA AND PLOTTING OF RESULTS--------#
 
 
@@ -326,6 +310,41 @@ for i in range(it_n):
     number_tubes_lst.append(sum(number_tubes_it))
     number_vehicles_lst.append(sum(number_vehicles_it))
 
+    # ------ alternatve plotting ------------#
+    # results visualisation
+    # city coordinates
+
+    if n == it_n-1:
+        print('plotting')
+        print(model.ObjVal)
+        print(sum(number_passengers_it))
+        print(sum(number_vehicles_it))
+        print(solution)
+        img = plt.imread(r'F:\Users\laure\Downloads\nl_map.gif')
+        fig, ax = plt.subplots()
+
+        # Function of loop: finds active links then plots line between nodes of each active link
+        for i in range(0, len(numbers)):
+            if solution[i + 4 * len(numbers)][1] >= 0.9:
+                s = [int(j) for j in re.findall(r'\d+', solution[i + 4 * len(numbers)][0])]
+
+                ax.plot((coord[s[0] - 1, 0], coord[s[1] - 1, 0]), (coord[s[0] - 1, 1], coord[s[1] - 1, 1]),
+                        label=numbers[i - 1])
+
+        # city coordinates
+        label = cities['city'].values
+        lon = coord[:, 0]
+        lat = coord[:, 1]
+        ax.scatter(lon, lat)
+        for i in range(len(lat)):
+            ax.text(lon[i] - 0.25, lat[i] + 0.05, label[i])
+        ax.imshow(img, extent=[3.4, 7, 50.78, 53.5])
+        ax.legend()
+        ax.set_xlabel('longitude [°]')
+        ax.set_ylabel('lattitude [°]')
+        ax.set_title('Network for cities in The Netherlands')
+        ax.plot()
+
 #----------plotting---------------#
 if plotting:
     plt.clf()
@@ -336,8 +355,10 @@ if plotting:
     plt.plot(ratio, number_tubes_lst,label = 'Number of tubes')
 
     plt.legend(loc='lower right')
-    plt.title('Change of parameters as a function of maximum number of passengers')
-    plt.xlabel('Tube maintenance cost 1/ratio')
+    plt.title('Change of parameters as a function of decreasing maintenance and operational cost for the stations, tubes and energy cost')
+    plt.xlabel('Decrease ratio of maintenance and operational cost')
     plt.grid()
+    plt.rcParams.update({'font.size': 17})
     plt.show()
+
 
