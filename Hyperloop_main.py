@@ -255,7 +255,7 @@ for v in model.getVars():
 
 #results visualisation
 #city coordinates
-img = plt.imread(r'F:\Users\laure\Downloads\nl_map.gif')
+img = plt.imread(r'nl_map.gif')
 fig, ax = plt.subplots()
 
 # Function of loop: finds active links then plots line between nodes of each active link
