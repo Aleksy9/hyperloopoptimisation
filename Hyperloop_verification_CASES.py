@@ -156,7 +156,7 @@ model.setObjective(obj,GRB.MAXIMIZE)
 # Updating the model
 model.update()
 # Writing the .lp file. Important for debugging
-model.write('model_formulation_verif.lp')
+model.write('model_formulation2.lp')
 
 # Here the model is actually being optimized
 model.optimize()
